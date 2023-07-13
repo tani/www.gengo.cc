@@ -1,0 +1,279 @@
+=pod
+
+=head1 Profile
+
+=for html <img loading="lazy" width="100" height="100" alt="Masaya Taniguchi @ ESSLLI2022" style="float: left; margin-right: 10px;" src="/portfolio_square.jpg">
+
+Hi, I am TANIGUCHI Masaya 👋
+
+Masaya Taniguchi graduated from Tokyo Tech High School of Science and Technology, and received B.S. from Gakushuin University,
+and M.S. from Japan Advanced Instituteof Science and Technology.
+He is a special postdoctoral researcher (SPDR) in Natural Language Understanding (NLU) team at Riken Advanced Intelligence Project (AIP).
+He is also a member of Natural Language Processing (NLP) group lead by Dr Kentaro Inui in Tohoku university.
+His research in-terests lie in the area of formal semantics of natural language, and programming language.
+
+=for html <div style="clear: left;"></div>
+
+=head2 Research Interests
+
+=over
+
+=item * Formal semantics and formal grammar of natural language
+
+=item * Proof Theory of Substructural Logic
+
+=item * Theorem proving (Isabelle/ HOL)
+
+=back
+
+=head2 Supervisor
+
+=over
+
+=item * Shinobu Hosono (Mathematics, Gakushuin University)
+
+=item * Satoshi Tojo (Information Science, Japan Advanced Institute of Science and Technology)
+
+=back
+
+=head2 Journal
+
+=over
+
+=item * Masaya Taniguchi and Satoshi Tojo, “Interactive Grammar Extraction from a TreeBank”,  JIIST vol. 8, 2022
+
+=back
+
+=head2 International Conference (Refereed)
+
+See also L<dblp|https://dblp.org/pid/242/9503.html>.
+
+=over
+
+=item * B<Masaya Taniguchi> and Satoshi Tojo, "Left-branching tree in CCG with D combinator", LENLS 19, 2022
+
+=item * B<Masaya Taniguchi>, "Decidable Parsing Algorithm for Categorial Grammar with Type-raising", TPS 2022, 2022
+
+=item * B<Masaya Taniguchi> and Satoshi Tojo, "Losing a Head in Grammar Extraction", KSE 2022, 2022
+
+=item * B<Masaya Taniguchi> and Satoshi Tojo, and Koji Mineshima, "Interactive CCG Parsing with Incremental Trees", BriGaps ESSLLI, 2022
+
+=item * B<Masaya Taniguchi>, "Unprovability of Continuation-Passing Style Transformation in Lambek Calculus", StuS ESSLLI, 2022
+
+=item * B<Masaya Taniguchi> and Satoshi Tojo, "Incremental derivations with Q combinator in CCG", LENLS 18, 2021
+
+=item * B<Masaya Taniguchi> and Satoshi Tojo, "Interactive Grammar Extraction from a Treebank", KICSS 2021, 2021
+
+=item * B<Masaya Taniguchi> and Satoshi Tojo, "Generic Framework to Uncross Dependency", AROB 25, 2020
+
+=item * Hiroki Sudo, B<Masaya Taniguchi>, and Satoshi Tojo, "Finding Grammar in Music by Evolutionary Linguistics", KICSS 2018, 2018
+
+=item * Song Yang, B<Masaya Taniguchi>, Satoshi Tojo, "4-valued Logic for Agent Communication with Private / Public Information Passing", ICAART 11, 2018
+
+=back
+
+
+=head2 Conference
+
+=over
+
+=item * B<Masaya Taniguchi>, "ランベック計算LCと範疇文法CGの等価性", 第8回山陰基礎論と数学およびその周辺の研究集会, 2023
+
+=item * B<Masaya Taniguchi>, "CG for Ungrammatical Sentences: Proving the Unprovability", L<MiCS|https://www.nlp.ecei.tohoku.ac.jp/research-meetings/mics/>, 2022, (invited)
+
+=item * B<Masaya Taniguchi>, "Formalization of Categorial Grammar", TPP 2021, 2021
+
+=item * B<Masaya Taniguchi>, "Continuations and Polymorphic Lambek Calculus", 論理・言語・代数系と計算機科学の周辺領域, 2021
+
+=item * B<Masaya Taniguchi>, "CPS変換と多相範疇文法", SLACS 2020, 2020
+
+=item * B<Masaya Taniguchi>, "Introduction to Montague Grammar", Foundation of Mathematics Junior Seminar, 2018
+
+=item * B<Masaya Taniguchi>, "Subjunctive Markers and Delimited Continuations", SLACS 2019, 2019
+
+=back
+
+And other local conferences.
+
+=head2 Non-academic work
+
+=over
+
+=item * B<Masaya Taniguchi>, "特集 Vimの基本大全 第3章 ファイル操作", Software Design, 7月号, 2022
+
+=back
+
+=head2 Teaching
+
+I have an experience to teach the formal language theories and undergraduate
+level mathematics.
+
+=over
+
+=item * Teaching assistant for "Formal Language and Automata" (April 2019 -- June 2019)
+
+=item * Teaching assistant for "Mathematics for Information Scientist" (June 2019 -- August 2019)
+
+=item * Teaching assistant for "Formal Language and Automata" (April 2020 -- June 2020)
+
+=item * Teaching assistant for "Mathematics for Information Scientist" (June 2020 -- August 2020)
+
+=item * Teaching assistant for "Formal Language and Automata" (April 2021 -- June 2021)
+
+=item * Teaching assistant for "Algebra for Computer Scientist" (June 2021 -- August 2021)
+
+=item * Teaching assistant for "Mathematical Logic" (October 2021 -- December 2021)
+
+=item * Teaching assistant for "Formal Language and Automata" (April 2022 -- June 2022)
+
+=back
+
+=head2 Degree
+
+=over
+
+=item * Bachelor of Science in Mathematics, Gakushuin University, 2018
+
+=item * Master of Science in Information Science, Japan Advanced Institute of Science and Technology, 2020
+
+=over
+
+I received my Master's degree by writing a project research report. This document is not published because it is not a master's thesis.
+
+=back
+
+=item * Doctor of Science in Information Science, Japan Advanced Institute of Science and Technology, 2023
+
+=back
+
+=head2 Social Contribution Activities
+
+=over
+
+=item * Volunteer education support at an orphanage Seirei Aiji En, Ishikawa, Japan, July. 2021 - Feburary. 2023
+
+=back
+
+=head2 Financial Support
+
+=over
+
+=item * JASSO Scholarship, Exemption from refund due to outstanding performance, April. 2018 -- March. 2020
+
+=item * JAIST Support Foundation Scholarship Grant (top 2 students in all first year students in the master's program, around 400 students), April. 2018 -- March. 2019
+
+=item * JAIST Scholarship M Program (top 25% of all second year students in the master's program, around 400 students), April. 2019 -- March. 2020
+
+=item * JAIST Doctoral Research Fellow (top 20% of all successful applicants for the doctoral program, around 100 students), April. 2020 -- March. 2021
+
+=item * JSPS Research Fellow (Doctoral Course 2, DC2) (Linguistics, Humanities), Japan Society for the Promotion of Science, April. 2021 -- March. 2023
+
+=back
+
+=head2 Research Experience
+
+=over
+
+=item * Instructor, Gakushuin University Computer Centre, April. 2015 -- March. 2018
+
+=item * Research Assistant, National Institute of Informatics, August. 2016 --- September. 2021
+
+=item * Doctoral Research Fellow, JAIST, April. 2020 -- March. 2021
+
+=over
+
+The purpose of the Doctoral Research Fellowship is to admit outstanding and highly motivated students pursuing a doctoral
+degree and develop their ability to carry out research as a young researcher by engaging in research activities.
+The DRF program is open for applications as follows. Students who wish to apply should follow the procedures below.
+
+=back
+
+=item * JSPS Research Fellow (Doctoral Course 2, DC2) (Linguistics, Humanities), Japan Society for the Promotion of Science, April. 2021 -- March. 2023
+
+=over
+
+Awarded to excellent young researchers, these fellowships offer the fellows an opportunity to focus on a freely chosen research topic based on their own innovative ideas. Ultimately, the program works to foster and secure excellent researchers.
+
+=back
+
+=item * [Declined] JSPS Research Fellow (Postdoctoral Fellowship, PD) (Linguistics, Humanities), Japan Society for the Promotion of Science, April. 2023
+
+=item * RIKEN Special Postdoctoral Research Fellow (Natural Language Understanding Unit), RIKEN, April. 2023
+
+=back
+
+=head2 Research Grant
+
+=over
+
+=item * L<Polymorphic Combinatory Categorial Grammar for Incremental Parsing|https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-21J15207/>
+ (80,00 00 JPY in 2021, 700,000 JPY in 2022), Grant-in-Aid for JSPS Fellows, April. 2021 -- March. 2023
+
+=item * Research Budget for Special Postdoctorial Researcher (1,000,000 JPY in 2022), RIKEN, April. 2023 -- March. 2024
+
+=back
+
+=head2 Awards
+
+=over
+
+=item * Tokyo Industrial Education Encouragement Award, TITECH HST, Tokyo, 2014
+
+=item * Outstanding Performance Award, JAIST, 2023
+
+=back
+
+=head2 Physical Skills
+
+=over
+
+=item * Japanese Martial Arts, Kendo 3rd dan grade, All Japan Kendo Federation, 2013
+
+=back
+
+=head2 Extra Skills
+
+=over
+
+=item * Fundamental Information Technology Engineer Examination, Information-technology Promotion Agency, Japan, 2011
+
+=item * Hazardous Materials Engineer's License, Class B, Group 4, Japan Fire Engineering Qualification Center, 2013
+
+=back
+
+=head2 Contact
+
+=over
+
+=item * E-mail: C<masaya.taniguchi(at)riken.jp>
+
+=back
+
+=head2 Software products
+
+I am an OSS developer joining many projects such as the interpreter of
+programming language, utilities for daily work, and some libraries. You can
+see these works on GitHub.
+
+=over
+
+=item * GitHub: L<tani|https://github.com>
+
+=item * Ruby RubyGems: L<taniguchi|https://rubygems.org/profiles/taniguchi/>
+
+=item * Python PyPI: L<taniguchi|https://pypi.org/user/taniguchi/>
+
+=item * JavaScript NPM: L<taniguchi|https://www.npmjs.com/~taniguchi>
+
+=item * Clojure Clojars: L<taniguchi|https://clojars.org/users/taniguchi>
+
+=back
+
+=head2 Acknowledgement
+
+My OSS work is supported by Gitpod, GitHub.
+
+Gitpod provides L<Professional Open Source|https://www.gitpod.io/docs/professional-open-source> license to me.
+GitHub provides L<GitHub Copilot|https://github.com/features/copilot> to me.
+
+=cut
