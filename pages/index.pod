@@ -243,21 +243,13 @@ Awarded to excellent young researchers, these fellowships offer the fellows an o
 
 =head2 Contact
 
-=head3 Current E-mail Addresses
-
 =over
 
-=item * B<Primary> C<masaya.taniguchi (at) riken.jp>
+=item Primary: C<masaya.taniguchi (at) riken.jp>
 
-=item * C<masaya.taniguchi.b2 (at) tohoku.ac.jp>
+=item Secondary: C<masaya.taniguchi.b2 (at) tohoku.ac.jp>
 
-=back
-
-=head3 Previous E-mail Addresses
-
-=over
-
-=item * C<taniguchi (at) jaist.ac.jp>
+=item Former: C<taniguchi (at) jaist.ac.jp>
 
 =back
 
