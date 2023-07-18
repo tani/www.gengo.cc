@@ -6,11 +6,11 @@
 
 Hi, I am TANIGUCHI Masaya 👋
 
-Masaya Taniguchi graduated from Tokyo Tech High School of Science and Technology, and received B.S. from Gakushuin University,
-and M.S. from Japan Advanced Instituteof Science and Technology.
-He is a special postdoctoral researcher (SPDR) in Natural Language Understanding (NLU) team at Riken Advanced Intelligence Project (AIP).
-He is also a member of Natural Language Processing (NLP) group lead by Dr Kentaro Inui in Tohoku university.
-His research in-terests lie in the area of formal semantics of natural language, and programming language.
+Masaya Taniguchi graduated from the Information Science Course at P<TITECH HST|Tokyo Tech High School of Science and Technology>. He earned his B.S. in Mathematics from Gakushuin University, followed by his M.S. and Ph.D. in Information Science from P<JAIST|Japan Advanced Institute of Science and Technology>.
+
+Presently, he holds the position of a researcher (P<SPDR|Special Postdoctoral Researcher>) in the Natural Language Understanding team at P<RIKEN AIP|RIKEN Advanced Intelligence Project>. Additionally, he is a member of P<Tohoku NLP|Research group for Natural Language Processing at Tohoku University>, led by Dr. Kentaro Inui, at Tohoku University.
+
+Masaya Taniguchi's research primarily focuses on formal semantics of natural language and programming languages. His keen interests lie in exploring and advancing the understanding of these domains.
 
 =for html <div style="clear: left;"></div>
 
@@ -202,7 +202,7 @@ Awarded to excellent young researchers, these fellowships offer the fellows an o
 
 =back
 
-=head2 Research Grant
+=head2 Research Grant and Research Budget
 
 =over
 
@@ -243,9 +243,21 @@ Awarded to excellent young researchers, these fellowships offer the fellows an o
 
 =head2 Contact
 
+=head3 Current E-mail Addresses
+
 =over
 
-=item * E-mail: C<masaya.taniguchi(at)riken.jp>
+=item * B<Primary> C<masaya.taniguchi (at) riken.jp>
+
+=item * C<masaya.taniguchi.b2 (at) tohoku.ac.jp>
+
+=back
+
+=head3 Previous E-mail Addresses
+
+=over
+
+=item * C<taniguchi (at) jaist.ac.jp>
 
 =back
 

@@ -7,6 +7,11 @@ const luaFactory = new LuaFactory('https://unpkg.com/wasmoon@1.15.0/dist/glue.wa
 const lua = await luaFactory.createEngine()
 const podium = await lua.doString(rawCode)
 
+podium.PodiumBackend.registerSimpleFormattingCode("html", "P", argument => {
+  const [short, long] = argument.split("|");
+  return `<span class="text-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="${long}">${short}</span>`
+})
+
 podium.PodiumBackend.registerSimple("html", "preamble", source => {
   const title = source.match(/^=head1(.*?)$/m)?.[1] ?? "Untitled";
   return `
@@ -28,9 +33,13 @@ podium.PodiumBackend.registerSimple("html", "preamble", source => {
   <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/@fontsource/fira-sans-condensed@4/500.min.css">
   <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/@fontsource/fira-code@4/400.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.css">
+<!--
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap-reboot.min.css">
+-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/base.css">
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
   <script type="module" src="/tocbot.js"></script>
   <script src="/mathjax.js"></script>
 </head>
