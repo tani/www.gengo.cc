@@ -49,6 +49,7 @@ podium.PodiumBackend.registerSimple("html", "preamble", source => {
     <nav>
       <ul>
         <li><a href="/index.html">Home</a></li>
+        <li><a href="/news.html">News</a></li>
         <li><a href="/publications.html">Publications</a></li>
       </ul>
     </nav>
