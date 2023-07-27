@@ -1,0 +1,19 @@
+=pod
+
+=head1 News
+
+=over
+
+=item * [August, 2023] I will participate in the Europian Summar School of Logic and Language, Information, in Ljubljana.
+
+=item * [July, 2023] I visited the Computational Logic Group at the Institute of Discrete Mathematics and Geometry of TU Wien, from July 18th to July 29th. On the 26th, I presented a talk titled "Bridging the Gap: Combinatorial Categorical Grammars and Proof Theory."
+
+=item * [April, 2023] I presented a talk titled "Proof Theoretic Linguistics" at the Sendai Logic Group, Mathematics Faculty, Tohoku University, Science Department on April 28th.
+
+=item * [April, 2023] I joined the Natural Understanding Team as a Special Postdoctoral Researcher for RIKEN AIP.
+
+=item * [March, 2023] I received my PhD (Information Science) from Japan Advanced Institute of Science and Technology (JAIST).
+
+=back
+
+=cut
