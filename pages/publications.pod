@@ -1,5 +1,11 @@
 =pod
 
+=head2 Combinatory Cateogiral Grammar for Incremental Parsing
+
+Masaya Taniguchi (JAIST)
+
+Doctoral Thesis, 2023 [L<PDF|https://filedn.eu/lsAWkVJjPybSJu4FXPf6Oy8/docs/taniguchi2023thesis.pdf>]
+
 =head2 Left-branching tree in CCG with D combinator
 
 Masaya Taniguchi (JAIST) and Satoshi Tojo
