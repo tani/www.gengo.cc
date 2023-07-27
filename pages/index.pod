@@ -253,6 +253,10 @@ Awarded to excellent young researchers, these fellowships offer the fellows an o
 
 =back
 
+=head2 Social Media
+
+=for html <ul><li>Mastodon: <a rel="me" href="https://mastodon.acm.org/@taniguchi">@taniguchi</a></li></ul>
+
 =head2 Software products
 
 I am an OSS developer joining many projects such as the interpreter of
