@@ -1,4 +1,5 @@
 import { LuaFactory } from "https://jspm.dev/wasmoon@1.15.0"
+import * as YAML from "https://deno.land/std@0.197.0/yaml/mod.ts";
 
 const rawCode = await fetch("https://pod.deno.dev/podium.lua")
   .then(r => r.text())
@@ -12,8 +13,25 @@ podium.PodiumBackend.registerSimpleFormattingCode("html", "P", argument => {
   return `<span class="text-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="${long}">${short}</span>`
 })
 
+function getFrontMatter(source: string) {
+  let frontMatter =""
+  let inFrontMatter = 0
+  for(const line of source.split("\n")) {
+    if (line.startsWith("---")) {
+      inFrontMatter += 1;
+      continue;
+    }
+    if (inFrontMatter === 1) {
+      frontMatter += line + "\n";
+    }
+  }
+  return YAML.parse(frontMatter);
+}
+
 podium.PodiumBackend.registerSimple("html", "preamble", source => {
-  const title = source.match(/^=head1(.*?)$/m)?.[1] ?? "Untitled";
+  const frontMatter = getFrontMatter(source);
+  const title = frontMatter?.title ?? source.match(/^=head1(.*?)$/m)?.[1] ?? "Untitled";
+  const date = frontMatter?.date ?? new Date().toISOString();
   return `
 <!DOCTYPE html>
 <html lang="en">
@@ -21,6 +39,7 @@ podium.PodiumBackend.registerSimple("html", "preamble", source => {
   <meta charset="utf-8">
   <meta name="author" content="Masaya Taniguchi">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="date" content="${date}">
   <title>${title} - M. Taniguchi's Website</title>
   <link rel="icon" href="/lambdasurge_min.png">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
