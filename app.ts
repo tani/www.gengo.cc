@@ -12,7 +12,7 @@ app.use(async (ctx, next) => {
     if (date) {
       const postDate = new Date(date[1]);
       const currDate = new Date();
-      console.log(postDate, currDate);
+      console.warn(postDate, currDate);
       if (postDate.getTime() > currDate.getTime()) {
         return ctx_html("404 Not found", 404);
       }
