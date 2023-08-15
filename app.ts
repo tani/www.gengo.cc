@@ -12,7 +12,7 @@ app.use(async (ctx, next) => {
     if (date) {
       const now = new Date();
       const postDate = new Date(date[1]);
-      if (postDate > now) {
+      if (postDate.getTime() > now.getTime()) {
         return ctx_html("404 Not found", 404);
       }
     }
