@@ -31,7 +31,7 @@ function getFrontMatter(source: string) {
 podium.PodiumBackend.registerSimple("html", "preamble", source => {
   const frontMatter = getFrontMatter(source);
   const title = frontMatter?.title ?? source.match(/^=head1(.*?)$/m)?.[1] ?? "Untitled";
-  const date = frontMatter?.date ?? new Date().toISOString();
+  const date = frontMatter?.date ?? new Date().toISOString().slice(0,10);
   return `
 <!DOCTYPE html>
 <html lang="en">

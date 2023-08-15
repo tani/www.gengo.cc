@@ -2,6 +2,7 @@ import { Hono } from "https://lib.deno.dev/x/hono@v3/mod.ts";
 import { serveStatic } from "https://lib.deno.dev/x/hono@v3/middleware.ts";
 import { serve } from "https://deno.land/std@0.191.0/http/server.ts";
 import * as pod from "./pod.ts";
+import { parseISO, parse,  isAfter } from "https://esm.sh/date-fns";
 
 const app = new Hono();
 
@@ -10,9 +11,9 @@ app.use(async (ctx, next) => {
   ctx.html = (content: string) => {
     const date = content.match(/<meta name="date" content="(.*?)">/);
     if (date) {
-      const now = new Date();
-      const postDate = new Date(date[1]);
-      if (postDate.getTime() > now.getTime()) {
+      const now = parseISO(new Date().toISOString());
+      const postDate = parse(date[1], 'yyyy-MM-dd', new Date());
+      if (isAfter(postDate, now)) {
         return ctx_html("404 Not found", 404);
       }
     }
