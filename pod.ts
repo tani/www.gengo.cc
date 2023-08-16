@@ -61,6 +61,7 @@ podium.PodiumBackend.registerSimple("html", "preamble", source => {
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
   <script type="module" src="/tocbot.js"></script>
   <script src="/mathjax.js"></script>
+  <script defer src="/schedule.js"></script>
 </head>
 <body>
   <header>

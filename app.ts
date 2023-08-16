@@ -5,22 +5,22 @@ import * as pod from "./pod.ts";
 
 const app = new Hono();
 
-app.use(async (ctx, next) => {
-  const ctx_html = ctx.html;
-  ctx.html = (content: string) => {
-    const date = content.match(/<meta name="date" content="(.*?)">/);
-    if (date) {
-      const postDate = new Date(date[1]);
-      const currDate = new Date();
-      console.warn(postDate, currDate);
-      if (postDate.getTime() > currDate.getTime()) {
-        return ctx_html("404 Not found", 404);
-      }
-    }
-    return ctx_html(content);
-  }
-  await next();
-})
+// app.use(async (ctx, next) => {
+//   const ctx_html = ctx.html;
+//   ctx.html = (content: string) => {
+//     const date = content.match(/<meta name="date" content="(.*?)">/);
+//     if (date) {
+//       const postDate = new Date(date[1]);
+//       const currDate = new Date();
+//       console.warn(postDate, currDate);
+//       if (postDate.getTime() > currDate.getTime()) {
+//         return ctx_html("404 Not found", 404);
+//       }
+//     }
+//     return ctx_html(content);
+//   }
+//   await next();
+// })
 
 app.get("/", (ctx) => ctx.redirect("/index.html") );
 
