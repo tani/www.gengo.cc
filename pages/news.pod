@@ -4,7 +4,7 @@
 
 =over
 
-=item * [September, 2023] I will participate in the Summer School of Mathematical Logic, in Tokyo.
+=item * [September, 2023] I will participate in the Summer School of Foundations of Mathematics, in Tokyo.
 
 =item * [September, 2023] I will give a talk about "Computational Complexity of Combinatory Cateogiral Grammar" at 若手による数理論理研究集会 (Symposium of Young Researchers for Mathematical Logic).
 
