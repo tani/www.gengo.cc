@@ -31,7 +31,6 @@ function getFrontMatter(source: string) {
 podium.PodiumBackend.registerSimple("html", "preamble", source => {
   const frontMatter = getFrontMatter(source);
   const title = frontMatter?.title ?? source.match(/^=head1(.*?)$/m)?.[1] ?? "Untitled";
-  const date = frontMatter?.date ?? new Date();
   return `
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +38,6 @@ podium.PodiumBackend.registerSimple("html", "preamble", source => {
   <meta charset="utf-8">
   <meta name="author" content="Masaya Taniguchi">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="date" content="${date.toISOString()}">
   <title>${title} - M. Taniguchi's Website</title>
   <link rel="icon" href="/lambdasurge_min.png">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -61,7 +59,6 @@ podium.PodiumBackend.registerSimple("html", "preamble", source => {
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
   <script type="module" src="/tocbot.js"></script>
   <script src="/mathjax.js"></script>
-  <script defer src="/schedule.js"></script>
 </head>
 <body>
   <header>
