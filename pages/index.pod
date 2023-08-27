@@ -209,7 +209,7 @@ Awarded to excellent young researchers, these fellowships offer the fellows an o
 =item * L<Polymorphic Combinatory Categorial Grammar for Incremental Parsing|https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-21J15207/>
  (80,00 00 JPY in 2021, 700,000 JPY in 2022), Grant-in-Aid for JSPS Fellows, April. 2021 -- March. 2023
 
-=item * Research Budget for Special Postdoctorial Researcher (1,000,000 JPY in 2022), RIKEN, April. 2023 -- March. 2024
+=item * Research Budget for Special Postdoctorial Researcher (1,500,000 JPY in 2022), RIKEN, April. 2023 -- March. 2024
 
 =back
 
