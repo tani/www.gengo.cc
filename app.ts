@@ -24,16 +24,16 @@ const app = new Hono();
 
 app.get("/", (ctx) => ctx.redirect("/index.html") );
 
-app.get("/:file{.*\\.html}", (ctx) => {
-  const file = ctx.req.param("file").replace(".html", ".pod");
-  const source = Deno.readTextFileSync(`./pages/${file}`);
+app.get("/blog/:article{.*\\.html}", (ctx) => {
+  const article = ctx.req.param("article").replace(".html", ".pod");
+  const source = Deno.readTextFileSync(`./pages/blog/${article}`);
   const result = pod.process(source);
   return ctx.html(result);
 })
 
-app.get("/blog/:article{.*\\.html}", (ctx) => {
-  const article = ctx.req.param("article").replace(".html", ".pod");
-  const source = Deno.readTextFileSync(`./pages/blog/${article}`);
+app.get("/:file{.*\\.html}", (ctx) => {
+  const file = ctx.req.param("file").replace(".html", ".pod");
+  const source = Deno.readTextFileSync(`./pages/${file}`);
   const result = pod.process(source);
   return ctx.html(result);
 })
