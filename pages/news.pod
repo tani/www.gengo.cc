@@ -8,6 +8,8 @@
 
 =item * [September, 2023] I will give a talk about "Computational Complexity of Combinatory Cateogiral Grammar" at 若手による数理論理研究集会 (Symposium of Young Researchers for Mathematical Logic).
 
+=item * [Semtember, 2023] We (Kosuke Matsuzaki, Masaya Taniguchi, Keisuke Sakaguchi, and Kentaro Inui) gave a poster presentation at YANS2023 titled "日本語学習のための形態意味中心の動詞活用" and received the Helpfeel Award.
+
 =item * [August, 2023] I participated in the Europian Summar School of Logic and Language, Information, in Ljubljana.
 
 =item * [July, 2023] I visited the Computational Logic Group at the Institute of Discrete Mathematics and Geometry of TU Wien, from July 18th to July 29th. On the 26th, I presented a talk titled "Bridging the Gap: Combinatorial Categorical Grammars and Proof Theory."
