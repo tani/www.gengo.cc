@@ -95,6 +95,14 @@ See also L<dblp|https://dblp.org/pid/242/9503.html>.
 
 And other local conferences.
 
+=head2 Academic work
+
+=over
+
+=item * Screener (Engineering), RIKEN Summer School, 2023.
+
+=back
+
 =head2 Non-academic work
 
 =over
