@@ -2,7 +2,7 @@
 author: Masaya Taniguchi
 pubDatetime: 2023-08-30
 title: "Artemis: Bridging the gap between Vim and Neovim"
-postSlug: artemis_briding_gap
+postSlug: artemis_bridging_gap
 featured: true
 draft: false
 tags:
