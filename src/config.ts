@@ -5,7 +5,7 @@ export const SITE: Site = {
   author: "Masaya Taniguchi",
   desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
   title: "M. Taniguchi's Webpage",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "lambdasurge_min.png",
   lightAndDarkMode: true,
   postPerPage: 3,
 };
