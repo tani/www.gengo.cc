@@ -1,7 +1,7 @@
 ---
 author: Masaya Taniguchi
 pubDatetime: 2023-08-30
-title: "Artemis: Bridging gap between Vim and Neovim"
+title: "Artemis: Bridging the gap between Vim and Neovim"
 postSlug: artemis_briding_gap
 featured: true
 draft: false
@@ -12,7 +12,7 @@ description: Artemis is a lua module offering a unified interface for
   the configuration file. We can use Neovim's Lua API in Vim.
 ---
 
-# Artemis: Bridging gap between Vim and Neovim
+# Artemis: Bridging the gap between Vim and Neovim
 
 [vim-artemis](https://github.com/tani/vim-artemis)
 is a lua module offering a unified interface for
