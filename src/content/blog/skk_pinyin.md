@@ -7,9 +7,7 @@ featured: true
 draft: false
 tags:
   - vim
-description: Artemis is a lua module offering a unified interface for
-  interaction with both Vim and Neovim, geared for use in
-  the configuration file. We can use Neovim's Lua API in Vim.
+description: SKKによる簡体字の入力について紹介します。
 ---
 
 # SKKで簡体字を入力する。
