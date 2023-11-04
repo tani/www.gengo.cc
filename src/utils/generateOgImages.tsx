@@ -7,26 +7,50 @@ import siteOgImage from "./og-templates/site";
 const fetchFonts = async () => {
   // Regular Font
   const fontFileRegular = await fetch(
-    "https://www.1001fonts.com/download/font/ibm-plex-mono.regular.ttf"
+    "https://github.com/google/fonts/raw/main/ofl/ibmplexmono/IBMPlexMono-Regular.ttf"
   );
   const fontRegular: ArrayBuffer = await fontFileRegular.arrayBuffer();
 
   // Bold Font
   const fontFileBold = await fetch(
-    "https://www.1001fonts.com/download/font/ibm-plex-mono.bold.ttf"
+    "https://github.com/google/fonts/raw/main/ofl/ibmplexmono/IBMPlexMono-Bold.ttf"
   );
   const fontBold: ArrayBuffer = await fontFileBold.arrayBuffer();
 
-  return { fontRegular, fontBold };
+  const jaFontFileRegular = await fetch(
+    "https://github.com/google/fonts/raw/main/ofl/bizudgothic/BIZUDGothic-Regular.ttf"
+  );
+  const jaFontRegular: ArrayBuffer = await jaFontFileRegular.arrayBuffer();
+
+  const jaFontFileBold = await fetch(
+    "https://github.com/google/fonts/raw/main/ofl/bizudgothic/BIZUDGothic-Bold.ttf"
+  );
+  const jaFontBold: ArrayBuffer = await jaFontFileBold.arrayBuffer();
+
+  return { fontRegular, fontBold, jaFontRegular, jaFontBold };
 };
 
-const { fontRegular, fontBold } = await fetchFonts();
+const { fontRegular, fontBold, jaFontRegular, jaFontBold } = await fetchFonts();
 
 const options: SatoriOptions = {
   width: 1200,
   height: 630,
-  embedFont: false,
+  embedFont: true,
   fonts: [
+    {
+      name: "BIZ UDGothic",
+      data: jaFontRegular,
+      weight: 400,
+      style: "normal",
+      lang: "ja-JP",
+    },
+    {
+      name: "BIZ UDGothic",
+      data: jaFontBold,
+      weight: 600,
+      style: "normal",
+      lang: "ja-JP",
+    },
     {
       name: "IBM Plex Mono",
       data: fontRegular,
