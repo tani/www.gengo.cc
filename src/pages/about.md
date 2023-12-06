@@ -5,11 +5,11 @@ title: "About"
 
 Hi, I am TANIGUCHI Masaya 👋
 
-Masaya Taniguchi graduated from the Information Science Course at . He earned his B.S. in Mathematics from Gakushuin University, followed by his M.S. and Ph.D. in Information Science from .
+Masaya Taniguchi graduated from the Information Science Course at JAIST. He earned his B.S. in Mathematics from Gakushuin University and his M.S. and Ph.D. in Information Science from JAIST.
 
-Presently, he holds the position of a researcher () in the Natural Language Understanding team at . Additionally, he is a member of , led by Dr. Kentaro Inui, at Tohoku University.
+Presently, he holds the researcher position (SPDR) in the Natural Language Understanding team at RIKEN AIP. Additionally, he is a member of TohokuNLP, led by Dr. Kentaro Inui, at Tohoku University.
 
-Masaya Taniguchi's research primarily focuses on formal semantics of natural language and programming languages. His keen interests lie in exploring and advancing the understanding of these domains.
+Masaya Taniguchi's research primarily focuses on the formal semantics of natural language and programming languages. His keen interests lie in exploring and advancing the understanding of these domains.
 
  <div style="clear: left;"></div>
 
@@ -44,7 +44,8 @@ See also [dblp](https://dblp.org/pid/242/9503.html).
 - Song Yang, **Masaya Taniguchi**, Satoshi Tojo, "4-valued Logic for Agent Communication with Private / Public Information Passing", ICAART 11, 2018
 
 ## Conference
-
+- **Masaya Taniguchi**, TBA, 証明論と計算論の最前線, 2023
+- **Masaya Taniguchi**, "速習ランベック計算", 数学基礎論若手の会, 2023
 - **Masaya Taniguchi**, "ランベック計算LCと範疇文法CGの等価性", 第8回山陰基礎論と数学およびその周辺の研究集会, 2023
 - **Masaya Taniguchi**, "CG for Ungrammatical Sentences: Proving the Unprovability", [MiCS](https://www.nlp.ecei.tohoku.ac.jp/research-meetings/mics/), 2022, (invited)
 - **Masaya Taniguchi**, "Formalization of Categorial Grammar", TPP 2021, 2021
@@ -86,13 +87,13 @@ level mathematics.
 
 ## Social Contribution Activities
 
-- Volunteer education support at an orphanage Seirei Aiji En, Ishikawa, Japan, July. 2021 - Feburary. 2023
+- Volunteer education support at an orphanage Seirei Aiji En, Ishikawa, Japan, July. 2021 - February. 2023
 
 ## Financial Support
 
 - JASSO Scholarship, Exemption from refund due to outstanding performance, April. 2018 -- March. 2020
-- JAIST Support Foundation Scholarship Grant (top 2 students in all first year students in the master's program, around 400 students), April. 2018 -- March. 2019
-- JAIST Scholarship M Program (top 25% of all second year students in the master's program, around 400 students), April. 2019 -- March. 2020
+- JAIST Support Foundation Scholarship Grant (top 2 students in all first-year students in the master's program, around 400 students), April. 2018 -- March. 2019
+- JAIST Scholarship M Program (top 25% of all second-year students in the master's program, around 400 students), April. 2019 -- March. 2020
 - JAIST Doctoral Research Fellow (top 20% of all successful applicants for the doctoral program, around 100 students), April. 2020 -- March. 2021
 - JSPS Research Fellow (Doctoral Course 2, DC2) (Linguistics, Humanities), Japan Society for the Promotion of Science, April. 2021 -- March. 2023
 
@@ -102,10 +103,10 @@ level mathematics.
 - Research Assistant, National Institute of Informatics, August. 2016 --- September. 2021
 - Doctoral Research Fellow, JAIST, April. 2020 -- March. 2021
   > The purpose of the Doctoral Research Fellowship is to admit outstanding and highly motivated students pursuing a doctoral
-  > degree and develop their ability to carry out research as a young researcher by engaging in research activities.
-  > The DRF program is open for applications as follows. Students who wish to apply should follow the procedures below.
+  > degree and develop their ability to conduct research as young researchers by engaging in research activities.
+  > The DRF program is open for applications as follows. Students who would like to apply should follow the procedures below.
 - JSPS Research Fellow (Doctoral Course 2, DC2) (Linguistics, Humanities), Japan Society for the Promotion of Science, April. 2021 -- March. 2023
-  > Awarded to excellent young researchers, these fellowships offer the fellows an opportunity to focus on a freely chosen research topic based on their own innovative ideas. Ultimately, the program works to foster and secure excellent researchers.
+  > Awarded to excellent young researchers, these fellowships offer the fellows an opportunity to focus on a freely chosen research topic based on their innovative ideas. Ultimately, the program works to foster and secure excellent researchers.
 - [Declined] JSPS Research Fellow (Postdoctoral Fellowship, PD) (Linguistics, Humanities), Japan Society for the Promotion of Science, April. 2023
 - RIKEN Special Postdoctoral Research Fellow (Natural Language Understanding Unit), RIKEN, April. 2023
 
@@ -113,7 +114,7 @@ level mathematics.
 
 - [Polymorphic Combinatory Categorial Grammar for Incremental Parsing](https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-21J15207/)
   (80,00 00 JPY in 2021, 700,000 JPY in 2022), Grant-in-Aid for JSPS Fellows, April. 2021 -- March. 2023
-- Research Budget for Special Postdoctorial Researcher (1,500,000 JPY in 2022), RIKEN, April. 2023 -- March. 2024
+- Research Budget for Special Postdoctoral Researcher (1,500,000 JPY in 2022), RIKEN, April. 2023 -- March. 2024
 
 ## Awards
 
