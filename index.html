@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Masaya Taniguchi" />
+    <meta name="description" content="Masaya Taniguchi's profile" />
+    <title>Masaya Taniguchi</title>
+    <link rel="icon" href="https://cdn.jsdelivr.net/npm/@twemoji/svg@15/1f363.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: "Source Sans 3", "Noto Sans JP", sans-serif;
+        font-weight: 400;
+        background-color: #fafafa;
+        main {
+          max-width: 80ch;
+          width: 80%;
+          margin: 0 auto;
+          padding: 0 2ch;
+          h1 {
+            text-align: center;
+            margin: 5dvh 0;
+            & + div {
+              text-align: center;
+              margin-bottom: 5dvh;
+            }
+          }
+          li {
+            margin: 0.5em 0;
+          }
+          code {
+            font-family: "Source Code Pro", monospace;
+            font-size: 0.9em;
+          }
+        }
+      }
+      @media (min-width: 481px) {
+        main {
+          text-align: justify;
+        }
+      }
+    </style>
+    <script type="module">
+      class XAbbr extends HTMLElement {
+        constructor() {
+          super();
+          const abbr = this.getAttribute("abbr") ?? this.innerHTML.replace(/[^A-Z]/g, "");
+          const title= this.innerHTML.trim();
+          const shadow = this.attachShadow({ mode: "closed" });
+          shadow.innerHTML = `<abbr title="${title}">${abbr}</abbr>`;
+        }
+      }
+      customElements.define("x-abbr", XAbbr);
+    </script>
+  </head>
+  <body>
+    <main>
+      <h1>Profile</h1>
+      <div>
+        Masaya Taniguchi<br />
+        RIKEN Center of <x-abbr>Advanced Intelligence Project</x-abbr><br />
+        <code>&lt;first name&gt;.&lt;last name&gt;@riken.jp</code>
+      </div>
+      <p>
+        Masaya Taniguchi is a researcher position in
+        <x-abbr>Natural Language Understanding</x-abbr> team at RIKEN
+        <x-abbr>Advanced Intelligence Project</x-abbr>. Additionally, he is a member
+        of TohokuNLP, led by Dr. Kentaro Inui, at Tohoku University. He earned
+        his <x-abbr>Bachelor of Science</x-abbr> in Mathematics from Gakushuin
+        University and his <x-abbr>Master of Science</x-abbr> and Ph.D. in
+        Information Science from
+        <x-abbr>Japan Advanced Institute of Science and Techonology</x-abbr>. Masaya
+        Taniguchi's research primarily focuses on the formal semantics of
+        natural language and programming languages. His keen interests lie in
+        exploring and advancing the understanding of these domains.
+      </p>
+      <h2>Research Interests</h2>
+      <ul>
+        <li>Formal Semantics and formal grammar of natural language</li>
+        <li>Proof Theory of Substructural Logic</li>
+        <li>Theorem Proving (Isabelle/ HOL)</li>
+      </ul>
+      <h2>Supervisor</h2>
+      <ul>
+        <li>Shinobu Hosono (Mathematics, Gakushuin University)</li>
+        <li>
+          Satoshi Tojo (Information Science,
+          <x-abbr>Japan Advanced Institute of Science and Technology</x-abbr>)
+        </li>
+      </ul>
+      <h2>Journal</h2>
+      <ul>
+        <li>
+          Masaya Taniguchi and Satoshi Tojo, “Interactive Grammar Extraction
+          from a TreeBank”, JIIST vol. 8, 2022
+        </li>
+      </ul>
+      <h2>International conference (Refereed)</h2>
+      <ol reversed>
+        <li>
+          <strong>Masaya Taniguchi</strong> and Satoshi Tojo, “Left-branching
+          tree in CCG with D combinator”, <x-abbr>Logic and Engineering of Natural Language Semantics</x-abbr> 19, 2022
+        </li>
+        <li>
+          <strong>Masaya Taniguchi</strong>, “Decidable Parsing Algorithm for
+          Categorial Grammar with Type-raising”, 
+          <x-abbr>The Proof theory Society workshop</x-abbr>, 2022
+        </li>
+        <li>
+          <strong>Masaya Taniguchi</strong> and Satoshi Tojo, “Losing a Head in
+          Grammar Extraction”, 
+          <x-abbr>Knowledge and Systems Engineering</x-abbr>, 2022
+        </li>
+        <li>
+          <strong>Masaya Taniguchi</strong> and Satoshi Tojo, and Koji
+          Mineshima, “Interactive CCG Parsing with Incremental Trees”, 
+          <x-abbr abbr="BriGap">Bridges and Caps between Formal and Computational Linguistics</x-abbr> of
+          <x-abbr>European Summer School in Logic, Language and Information</x-abbr>, 2022
+        </li>
+        <li>
+          <strong>Masaya Taniguchi</strong>, “Unprovability of
+          Continuation-Passing Style Transformation in Lambek Calculus”,
+          Student Session of <x-abbr>European Summer School in Logic, Language and Information</x-abbr>, 2022
+        </li>
+        <li>
+          <strong>Masaya Taniguchi</strong> and Satoshi Tojo, “Incremental
+          derivations with Q combinator in CCG”, 
+          <x-abbr>Logic and Engineering of Natural Language Semantics</x-abbr> 18, 2021
+        </li>
+        <li>
+          <strong>Masaya Taniguchi</strong> and Satoshi Tojo, “Interactive
+          Grammar Extraction from a Treebank”, 
+          <x-abbr>Knowledge, Information and Creativity Support Systems</x-abbr> 16, 2021
+        </li>
+        <li>
+          <strong>Masaya Taniguchi</strong> and Satoshi Tojo, “Generic Framework
+          to Uncross Dependency”, <x-abbr abbr="AROB">Artifical Life and Robotics</x-abbr> 25, 2020
+        </li>
+        <li>
+          Hiroki Sudo, <strong>Masaya Taniguchi</strong>, and Satoshi Tojo,
+          “Finding Grammar in Music by Evolutionary Linguistics”,
+          <x-abbr>Knowledge, Information and Creativity Support Systems</x-abbr> 13, 2018
+        </li>
+        <li>
+          Song Yang, <strong>Masaya Taniguchi</strong>, Satoshi Tojo, “4-valued
+          Logic for Agent Communication with Private / Public Information
+          Passing”, 
+          <x-abbr abbr="ICAART">International Conference on Agents and Artificial intelligence</x-abbr> 11, 2018
+        </li>
+      </ol>
+      <h2>Conference</h2>
+      <ol reversed>
+        <li>
+          <strong>Masaya Taniguchi</strong>, “定理証明支援系によるプログラミング支援：言語学から工学への橋渡し”, 第９回 山陰 数学と基礎論研究集会, 2024
+        </li>
+        <li>
+          <strong>Masaya Taniguchi</strong>, “Structural Connection between Directional Implications and Type-Raising”, 証明論と計算論の最前線, 2023
+        </li>
+        <li>
+          <strong>Masaya Taniguchi</strong>, “速習ランベック計算”,
+          数学基礎論若手の会, 2023
+        </li>
+        <li>
+          <strong>Masaya Taniguchi</strong>, “Computational Complexity of Combinatory Categorical Grammar”, 若手による数理論理研究集会, 2023
+        </li>
+        <li>
+          <strong>Masaya Taniguchi</strong>,
+          “ランベック計算LCと範疇文法CGの等価性”,
+          第8回山陰基礎論と数学およびその周辺の研究集会, 2023
+        </li>
+        <li>
+          Kosuke Matsuzaki, <strong>Masaya Taniguchi</strong>, Keisuke Sakaguchi, and Kentaro Inui, “日本語学習のための形態意味中心の動詞活用”, YANS2023, 2023
+        </li>
+        <li>
+          <strong>Masaya Taniguchi</strong>, “Incremental Parsing: Categorial Grammars and Lambek-style Calculi", <a href="https://www.jaist.ac.jp/~s2020029/substructural_logic_workshop.html">Substructural Logic Workshop</a>, 2022
+        </li>
+        <li>
+          <strong>Masaya Taniguchi</strong>, “Formalization of Categorial
+          Grammar”, 
+          <x-abbr>Theorem Proving and Provers meeting</x-abbr> 17, 2021
+        </li>
+        <li>
+          <strong>Masaya Taniguchi</strong>, “Continuations and Polymorphic
+          Lambek Calculus”, 論理・言語・代数系と計算機科学の周辺領域, 2021
+        </li>
+        <li>
+          <strong>Masaya Taniguchi</strong>, “CPS変換と多相範疇文法”, 
+          <x-abbr>Symbolic Logic And Computer Science</x-abbr>, 2020
+        </li>
+        <li>
+          <strong>Masaya Taniguchi</strong>, “Introduction to Montague Grammar”,
+          数学基礎論若手の会, 2018
+        </li>
+        <li>
+          <strong>Masaya Taniguchi</strong>, “Subjunctive Markers and Delimited
+          Continuations”,
+          <x-abbr>Symbolic Logic And Computer Science</x-abbr>, 2019
+        </li>
+      </ol>
+      <h2>Talks</h2>
+      <ol  reversed>
+        <li>
+          <strong>Masaya Taniguchi</strong>, “Selling your research: what we did to get people to use categorical grammar", Discovery Evening, RIKEN, 2024
+        </li>
+        <li>
+          <strong>Masaya Taniguchi</strong>, “Mathematics in Natural Language”, 
+          Guest Lecture, Lecture for Natural Language Processing, Tohoku University, 2023
+        </li>
+        <li>
+          <strong>Masaya Taniguchi</strong>, “範疇文法の決定可能性”, Tokyo University of Science, Applied Mathematics Department, Matsuzaki Laboratory, 2023
+        </li>
+        <li>
+          <strong>Masaya Taniguchi</strong>, “数理言語学から見るLambek”, 
+          Hasegawa Laboratory, <x-abbr>Research Institute for Mathematical Sciences</x-abbr>, Kyoto University, 2023
+        </li>
+        <li>
+          <strong>Masaya Taniguchi</strong>, “Bridging the Gap: Combinatorial Categorical Grammars and Proof Theory”,
+          Computational Logic Seminar,
+          <x-abbr>Technische Universität</x-abbr> Wien, 2023
+        </li>
+        <li>
+          <strong>Masaya Taniguchi</strong>, “Proof Theoretic Linguistics”, Sendai Logic Group, Mathematics Faculty, Tohoku University, 2023
+        </li>
+        <li>
+          <strong>Masaya Taniguchi</strong>, “CG for Ungrammatical Sentences:
+          Proving the Unprovability”,
+          <a href="https://www.nlp.ecei.tohoku.ac.jp/research-meetings/mics/">
+            <x-abbr abbr="MiCS">
+            Michinoku Communicatoin Science Seminar
+            </x-abbr>
+          </a>, 2022, (invited)
+        </li>
+      </ol>
+      <h2>Academic work</h2>
+      <ul>
+        <li>Screener (Engineering), RIKEN Summer School, 2023.</li>
+      </ul>
+      <h2>Non-academic work</h2>
+      <ul>
+        <li>
+          <strong>Masaya Taniguchi</strong>, “特集 Vimの基本大全 第3章
+          ファイル操作”, Software Design, 7月号, 2022
+        </li>
+      </ul>
+      <h2>Teaching</h2>
+      <p>
+        I have an experience to teach the formal language theories and
+        undergraduate level mathematics.
+      </p>
+      <ul>
+        <li>
+          Teaching assistant for “Formal Language and Automata” (April 2019 —
+          June 2019), <x-abbr>Japan Advanced Institute of Science and Technology</x-abbr>
+        </li>
+        <li>
+          Teaching assistant for “Mathematics for Information Scientist” (June
+          2019 — August 2019), <x-abbr>Japan Advanced Institute of Science and Technology</x-abbr>
+        </li>
+        <li>
+          Teaching assistant for “Formal Language and Automata” (April 2020 —
+          June 2020), <x-abbr>Japan Advanced Institute of Science and Technology</x-abbr>
+        </li>
+        <li>
+          Teaching assistant for “Mathematics for Information Scientist” (June
+          2020 — August 2020), <x-abbr>Japan Advanced Institute of Science and Technology</x-abbr>
+        </li>
+        <li>
+          Teaching assistant for “Formal Language and Automata” (April 2021 —
+          June 2021), <x-abbr>Japan Advanced Institute of Science and Technology</x-abbr>
+        </li>
+        <li>
+          Teaching assistant for “Algebra for Computer Scientist” (June 2021 —
+          August 2021), <x-abbr>Japan Advanced Institute of Science and Technology</x-abbr>
+        </li>
+        <li>
+          Teaching assistant for “Mathematical Logic” (October 2021 — December
+          2021), <x-abbr>Japan Advanced Institute of Science and Technology</x-abbr>
+        </li>
+        <li>
+          Teaching assistant for “Formal Language and Automata” (April 2022 —
+          June 2022), <x-abbr>Japan Advanced Institute of Science and Technology</x-abbr>
+        </li>
+      </ul>
+      <h2>Degree</h2>
+      <ul>
+        <li>Bachelor of Science in Mathematics, Gakushuin University, 2018</li>
+        <li>
+          Master of Science in Information Science,
+          <x-abbr>Japan Advanced Institute of Science and Technology</x-abbr>, 2020
+          <blockquote>
+            <p>
+              I received my Master’s degree by writing a project research
+              report, which is unpublished.
+            </p>
+          </blockquote>
+        </li>
+        <li>
+          Doctor of Science in Information Science, <x-abbr>Japan Advanced Institute of Science and Technology</x-abbr>, 2023
+        </li>
+      </ul>
+      <h2>Social Contribution Activities</h2>
+      <ul>
+        <li>
+          Volunteer education support at an orphanage Seirei Aiji En, Ishikawa,
+          Japan, July. 2021 - February. 2023
+        </li>
+      </ul>
+      <h2>Financial Support</h2>
+      <ul>
+        <li>
+          JASSO Scholarship, Exemption from refund due to outstanding
+          performance, April. 2018 — March. 2020
+        </li>
+        <li>
+          <x-abbr>Japan Advanced Institute of Science and Technology</x-abbr>
+          Support Foundation Scholarship Grant (top 2 students in all
+          first-year students in the master’s program, around 400 students),
+          April. 2018 — March. 2019
+        </li>
+        <li>
+          <x-abbr>Japan Advanced Institute of Science and Technology</x-abbr>
+          Scholarship M Program (top 25% of all second-year students in
+          the master’s program, around 400 students), April. 2019 — March. 2020
+        </li>
+        <li>
+          <x-abbr>Japan Advanced Institute of Science and Technology</x-abbr>
+          Doctoral Research Fellow (top 20% of all successful applicants
+          for the doctoral program, around 100 students), April. 2020 — March.
+          2021
+        </li>
+        <li>
+          <x-abbr>Japan Society for the Promotion of Science</x-abbr>
+          Research Fellow (Doctoral Course 2, DC2) (Linguistics,
+          Humanities),  <x-abbr>Japan Society for the Promotion of Science</x-abbr>, April. 2021 — March. 2023
+        </li>
+      </ul>
+      <h2>Research Experience</h2>
+      <ul>
+        <li>
+          Instructor, Gakushuin University Computer Centre, April. 2015 — March.
+          2018
+        </li>
+        <li>
+          Research Assistant, National Institute of Informatics, August. 2016
+          --- September. 2021
+        </li>
+        <li>
+          Doctoral Research Fellow, 
+          <x-abbr>Japan Advanced Institute of Science and Technology</x-abbr>,
+          April. 2020 — March. 2021
+          <blockquote>
+            <p>
+              The purpose of the Doctoral Research Fellowship is to admit
+              outstanding and highly motivated students pursuing a doctoral
+              degree and develop their ability to conduct research as young
+              researchers by engaging in research activities. The DRF program is
+              open for applications as follows. Students who would like to apply
+              should follow the procedures below.
+            </p>
+          </blockquote>
+        </li>
+        <li>
+          <x-abbr>Japan Society for the Promotion of Science</x-abbr>
+          Research Fellow (Doctoral Course 2, DC2) (Linguistics,
+          Humanities), 
+          <x-abbr>Japan Society for the Promotion of Science</x-abbr>,
+          April. 2021 — March. 2023
+          <blockquote>
+            <p>
+              Awarded to excellent young researchers, these fellowships offer
+              the fellows an opportunity to focus on a freely chosen research
+              topic based on their innovative ideas. Ultimately, the program
+              works to foster and secure excellent researchers.
+            </p>
+          </blockquote>
+        </li>
+        <li>
+          [Declined] 
+          <x-abbr>Japan Society for the Promotion of Science</x-abbr>
+          Research Fellow (Postdoctoral Fellowship, PD)
+          (Linguistics, Humanities),
+          <x-abbr>Japan Society for the Promotion of Science</x-abbr>,
+          April. 2023
+        </li>
+        <li>
+          RIKEN Special Postdoctoral Research Fellow (Natural Language
+          Understanding Unit), RIKEN, April. 2023
+        </li>
+      </ul>
+      <h2>Research Grant and Research Budget</h2>
+      <ul>
+        <li>
+          <a href="https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-21J15207/">
+            Polymorphic Combinatory Categorial Grammar for Incremental Parsing
+          </a>
+          (80,00 00 JPY in 2021, 700,000 JPY in 2022), Grant-in-Aid for <x-abbr>Japan Society for the Promotion of Science</x-abbr>
+          Fellows, April. 2021 — March. 2023
+        </li>
+        <li>
+          Research Budget for Special Postdoctoral Researcher (1,500,000 JPY in
+          2022), RIKEN, April. 2023 — March. 2024
+        </li>
+      </ul>
+      <h2>Awards</h2>
+      <ul>
+        <li>
+          Tokyo Industrial Education Encouragement Award, TITECH HST, Tokyo,
+          2014
+        </li>
+        <li>Outstanding Performance Award,
+          <x-abbr>Japan Advanced Institute of Science and Technology</x-abbr>,
+          2023</li>
+      </ul>
+      <h2>Physical Skills</h2>
+      <ul>
+        <li>
+          Japanese Martial Arts, Kendo 3rd dan grade, All Japan Kendo
+          Federation, 2013
+        </li>
+      </ul>
+      <h2>Extra Skills</h2>
+      <ul>
+        <li>
+          Fundamental Information Technology Engineer Examination,
+          Information-technology Promotion Agency, Japan, 2011
+        </li>
+        <li>
+          Hazardous Materials Engineer’s License, Class B, Group 4, Japan Fire
+          Engineering Qualification Center, 2013
+        </li>
+      </ul>
+      <h2>Social Media</h2>
+      <ul>
+        <li>
+          Mastodon: <a href="https://mastodon.acm.org/@taniguchi">@taniguchi</a>
+        </li>
+      </ul>
+      <h2>Software products</h2>
+      <p>
+        I am an OSS developer joining many projects such as the interpreter of
+        programming language, utilities for daily work, and some libraries. You
+        can see these works on GitHub.
+      </p>
+      <ul>
+        <li>GitHub: <a href="https://github.com">tani</a></li>
+        <li>
+          Ruby RubyGems:
+          <a href="https://rubygems.org/profiles/taniguchi/">taniguchi</a>
+        </li>
+        <li>
+          Python PyPI: <a href="https://pypi.org/user/taniguchi/">taniguchi</a>
+        </li>
+        <li>
+          JavaScript NPM:
+          <a href="https://www.npmjs.com/~taniguchi">taniguchi</a>
+        </li>
+        <li>
+          Clojure Clojars:
+          <a href="https://clojars.org/users/taniguchi">taniguchi</a>
+        </li>
+      </ul>
+      <h2>Acknowledgement</h2>
+      <p>My OSS is supported by Gitpod and GitHub.</p>
+      <p>
+        Gitpod provides
+        <a href="https://www.gitpod.io/docs/professional-open-source">
+          Professional Open Source
+        </a>
+        license to me. GitHub provides
+        <a href="https://github.com/features/copilot">GitHub Copilot</a> to me.
+      </p>
+      <h2>News</h2>
+      <ul>
+        <li>
+          [September, 2023] I participated in the Summer School of Foundations
+          of Mathematics, in Tokyo.
+        </li>
+        <li>
+          [September, 2023] I gave a talk about “Computational Complexity of
+          Combinatory Cateogiral Grammar” at 若手による数理論理研究集会
+          (Symposium of Young Researchers for Mathematical Logic).
+        </li>
+        <li>
+          [Semtember, 2023] We (Kosuke Matsuzaki, Masaya Taniguchi, Keisuke
+          Sakaguchi, and Kentaro Inui) gave a poster presentation at YANS2023
+          titled “日本語学習のための形態意味中心の動詞活用” and received the
+          Helpfeel Award.
+        </li>
+        <li>
+          [August, 2023] I participated in the Europian Summar School of Logic
+          and Language, Information, in Ljubljana.
+        </li>
+        <li>
+          [July, 2023] I visited the Computational Logic Group at the Institute
+          of Discrete Mathematics and Geometry of TU Wien, from July 18th to
+          July 29th. On the 26th, I presented a talk titled “Bridging the Gap:
+          Combinatorial Categorical Grammars and Proof Theory.”
+        </li>
+        <li>
+          [April, 2023] I presented a talk titled “Proof Theoretic Linguistics”
+          at the Sendai Logic Group, Mathematics Faculty, Tohoku University,
+          Science Department on April 28th.
+        </li>
+        <li>
+          [April, 2023] I joined the Natural Understanding Team as a Special
+          Postdoctoral Researcher for RIKEN AIP.
+        </li>
+        <li>
+          [March, 2023] I received my PhD (Information Science) from Japan
+          Advanced Institute of Science and Technology (JAIST).
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>
