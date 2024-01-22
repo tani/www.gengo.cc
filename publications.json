@@ -98,6 +98,15 @@
         "type": "Conference",
         "articles": [
           {
+            "title": "Context-sensitive Extension of Lambek Calculus",
+            "authors": ["Masaya Taniguchi"],
+            "conference": "MLG数理論理学研究集会",
+            "number": 58,
+            "year": 2024,
+            "month": 2,
+            "venue": "Miyagi, Japan"
+          },
+          {
             "title": "言語モデルの思考連鎖的推論における探索戦略の動的変化",
             "authors": ["青木洋一", "工藤慧音", "曾根周作", "栗林樹生", "谷口雅弥", "坂口慶祐", "乾健太郎"],
             "conference": "言語処理学会第30回年次大会",
