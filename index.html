@@ -73,6 +73,9 @@
         if (art.number) {
           conference = `${conference} ${art.number}`
         }
+        if (art.volume) {
+          conference = `${conference} ${art.volume}`
+        }
         let year = art.year
         if (art.month) {
           year = `${year}.${art.month}`
