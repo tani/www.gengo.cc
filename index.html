@@ -87,6 +87,15 @@
       html += "</ol>"
     }
     document.getElementById("publications").innerHTML = html
+    customElements.define("x-abbr", class extends HTMLElement {
+      constructor() {
+        super();
+        const abbr = this.getAttribute("abbr") ?? this.innerHTML.replace(/[^A-Z]/g, "");
+        const title= this.innerHTML.trim();
+        const shadow = this.attachShadow({ mode: "closed" });
+        shadow.innerHTML = `<abbr title="${title}">${abbr}</abbr>`;
+      }
+    });
   </script>
 </head>
 
