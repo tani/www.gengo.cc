@@ -60,15 +60,33 @@
     }
   </style>
   <script type="module">
-    customElements.define("x-abbr", class extends HTMLElement {
-      constructor() {
-        super();
-        const abbr = this.getAttribute("abbr") ?? this.innerHTML.replace(/[^A-Z]/g, "");
-        const title = this.innerHTML.trim();
-        const shadow = this.attachShadow({ mode: "closed" });
-        shadow.innerHTML = `<abbr title="${title}">${abbr}</abbr>`;
+    const response = await fetch("./publications.json")
+    const { publications } = await response.json()
+    let html = ""
+    for(const pub of publications) {
+      html += `<h2>${pub.type}</h2>`
+      html += "<ol reversed>"
+      for(const art of pub.articles) {
+        let authors = art.authors.join(", ")
+        let title = art.title
+        let conference = art.conference || art.event || art.journal
+        if (art.number) {
+          conference = `${conference} ${art.number}`
+        }
+        let year = art.year
+        if (art.month) {
+          year = `${year}.${art.month}`
+        }
+        let venue = art.venue
+        if (art.organization) {
+          html += `<li>${authors}, "${title}", ${conference}, ${art.organization}, ${year}, ${venue}</li>`
+        } else {
+          html += `<li>${authors}, "${title}", ${conference}, ${year}, ${venue}</li>`
+        }
       }
-    });
+      html += "</ol>"
+    }
+    document.getElementById("publications").innerHTML = html
   </script>
 </head>
 
@@ -107,171 +125,7 @@
         <x-abbr>Japan Advanced Institute of Science and Technology</x-abbr>)
       </li>
     </ul>
-    <h2>Journal</h2>
-    <ul>
-      <li>
-        Masaya Taniguchi and Satoshi Tojo, “Interactive Grammar Extraction
-        from a TreeBank”, JIIST vol. 8, 2022
-      </li>
-    </ul>
-    <h2>International conference (Refereed)</h2>
-    <ol reversed>
-      <li>
-        <strong>Masaya Taniguchi</strong> and Satoshi Tojo, “Left-branching
-        tree in CCG with D combinator”, <x-abbr>Logic and Engineering of Natural Language Semantics</x-abbr> 19, 2022
-      </li>
-      <li>
-        <strong>Masaya Taniguchi</strong>, “Decidable Parsing Algorithm for
-        Categorial Grammar with Type-raising”,
-        <x-abbr>The Proof theory Society workshop</x-abbr>, 2022
-      </li>
-      <li>
-        <strong>Masaya Taniguchi</strong> and Satoshi Tojo, “Losing a Head in
-        Grammar Extraction”,
-        <x-abbr>Knowledge and Systems Engineering</x-abbr>, 2022
-      </li>
-      <li>
-        <strong>Masaya Taniguchi</strong> and Satoshi Tojo, and Koji
-        Mineshima, “Interactive CCG Parsing with Incremental Trees”,
-        <x-abbr abbr="BriGap">Bridges and Caps between Formal and Computational Linguistics</x-abbr> of
-        <x-abbr>European Summer School in Logic, Language and Information</x-abbr>, 2022
-      </li>
-      <li>
-        <strong>Masaya Taniguchi</strong>, “Unprovability of
-        Continuation-Passing Style Transformation in Lambek Calculus”,
-        Student Session of <x-abbr>European Summer School in Logic, Language and Information</x-abbr>, 2022
-      </li>
-      <li>
-        <strong>Masaya Taniguchi</strong> and Satoshi Tojo, “Incremental
-        derivations with Q combinator in CCG”,
-        <x-abbr>Logic and Engineering of Natural Language Semantics</x-abbr> 18, 2021
-      </li>
-      <li>
-        <strong>Masaya Taniguchi</strong> and Satoshi Tojo, “Interactive
-        Grammar Extraction from a Treebank”,
-        <x-abbr>Knowledge, Information and Creativity Support Systems</x-abbr> 16, 2021
-      </li>
-      <li>
-        <strong>Masaya Taniguchi</strong> and Satoshi Tojo, “Generic Framework
-        to Uncross Dependency”, <x-abbr abbr="AROB">Artifical Life and Robotics</x-abbr> 25, 2020
-      </li>
-      <li>
-        Hiroki Sudo, <strong>Masaya Taniguchi</strong>, and Satoshi Tojo,
-        “Finding Grammar in Music by Evolutionary Linguistics”,
-        <x-abbr>Knowledge, Information and Creativity Support Systems</x-abbr> 13, 2018
-      </li>
-      <li>
-        Song Yang, <strong>Masaya Taniguchi</strong>, Satoshi Tojo, “4-valued
-        Logic for Agent Communication with Private / Public Information
-        Passing”,
-        <x-abbr abbr="ICAART">International Conference on Agents and Artificial intelligence</x-abbr> 11, 2018
-      </li>
-    </ol>
-    <h2>Conference</h2>
-    <ol reversed>
-      <li>
-        青木洋一, 工藤慧音, 曾根周作, 栗林樹生, <strong>谷口雅弥</strong>, 坂口慶祐, 乾健太郎, “言語モデルの思考連鎖的推論における探索戦略の動的変化”, 言語処理学会第30回年次大会, March 2024
-      </li>
-      <li>
-        三浦東子, <strong>谷口雅弥</strong>, 坂口慶祐, 乾健太郎, “検出器の判断に基づく大規模言語モデルの生成テキストの特徴分析”, 言語処理学会第30回年次大会, March 2024
-      </li>
-      <li>
-        松﨑孝介, <strong>谷口雅弥</strong>, 乾健太郎, 坂口慶祐, “J-UniMorph: 日本語の形態論における意味分類の体系化”, 言語処理学会第30回年次大会, March 2024
-      </li>
-      <li>
-        青木洋一, 工藤慧音, 栗林樹生, <strong>谷口雅弥</strong>, 曾根周作, 坂口慶祐, 乾健太郎, “算術推論問題における自己回帰型言語モデルの内部機序”, 言語処理学会第30回年次大会, March 2024, 
-      </li>
-      <li>
-        <strong>Masaya Taniguchi</strong>, “範疇文法の計算論的解釈”, 言語学フェス 2024
-      </li>
-      <li>
-        <strong>Masaya Taniguchi</strong>, “定理証明支援系によるプログラミング支援：言語学から工学への橋渡し”, 第９回 山陰 数学と基礎論研究集会, 2024
-      </li>
-      <li>
-        <strong>Masaya Taniguchi</strong>, “Structural Connection between Directional Implications and Type-Raising”,
-        証明論と計算論の最前線, 2023
-      </li>
-      <li>
-        <strong>Masaya Taniguchi</strong>, “速習ランベック計算”,
-        数学基礎論若手の会, 2023
-      </li>
-      <li>
-        <strong>Masaya Taniguchi</strong>, “Computational Complexity of Combinatory Categorical Grammar”, 若手による数理論理研究集会,
-        2023
-      </li>
-      <li>
-        Kosuke Matsuzaki, <strong>Masaya Taniguchi</strong>, Keisuke Sakaguchi, and Kentaro Inui,
-        “日本語学習のための形態意味中心の動詞活用”, YANS2023, 2023
-      </li>
-      <li>
-        <strong>Masaya Taniguchi</strong>,
-        “ランベック計算LCと範疇文法CGの等価性”,
-        第8回山陰基礎論と数学およびその周辺の研究集会, 2023
-      </li>
-      <li>
-        <strong>Masaya Taniguchi</strong>, “Incremental Parsing: Categorial Grammars and Lambek-style Calculi", 
-        <a href="https://www.jaist.ac.jp/~s2020029/substructural_logic_workshop.html">Substructural Logic Workshop</a>,
-        2022
-      </li>
-      <li>
-        <strong>Masaya Taniguchi</strong>, “Formalization of Categorial Grammar”,
-        <x-abbr>Theorem Proving and Provers meeting</x-abbr> 17, 2021
-      </li>
-      <li>
-        <strong>Masaya Taniguchi</strong>, “Continuations and Polymorphic Lambek Calculus”,
-        論理・言語・代数系と計算機科学の周辺領域, 2021
-      </li>
-      <li>
-        <strong>Masaya Taniguchi</strong>, “CPS変換と多相範疇文法”,
-        <x-abbr>Symbolic Logic And Computer Science</x-abbr>, 2020
-      </li>
-      <li>
-        <strong>Masaya Taniguchi</strong>, “Introduction to Montague Grammar”,
-        数学基礎論若手の会, 2018
-      </li>
-      <li>
-        <strong>Masaya Taniguchi</strong>, “Subjunctive Markers and Delimited
-        Continuations”,
-        <x-abbr>Symbolic Logic And Computer Science</x-abbr>, 2019
-      </li>
-    </ol>
-    <h2>Talks</h2>
-    <ol reversed>
-      <li>
-        <strong>Masaya Taniguchi</strong>, “Selling your research: what we did to get people to use categorical
-        grammar", Discovery Evening, RIKEN, 2024
-      </li>
-      <li>
-        <strong>Masaya Taniguchi</strong>, “Mathematics in Natural Language”,
-        Guest Lecture, Lecture for Natural Language Processing, Tohoku University, 2023
-      </li>
-      <li>
-        <strong>Masaya Taniguchi</strong>, “範疇文法の決定可能性”, Tokyo University of Science, Applied Mathematics Department,
-        Matsuzaki Laboratory, 2023
-      </li>
-      <li>
-        <strong>Masaya Taniguchi</strong>, “数理言語学から見るLambek”,
-        Hasegawa Laboratory, <x-abbr>Research Institute for Mathematical Sciences</x-abbr>, Kyoto University, 2023
-      </li>
-      <li>
-        <strong>Masaya Taniguchi</strong>, “Bridging the Gap: Combinatorial Categorical Grammars and Proof Theory”,
-        Computational Logic Seminar,
-        <x-abbr>Technische Universität</x-abbr> Wien, 2023
-      </li>
-      <li>
-        <strong>Masaya Taniguchi</strong>, “Proof Theoretic Linguistics”, Sendai Logic Group, Mathematics Faculty,
-        Tohoku University, 2023
-      </li>
-      <li>
-        <strong>Masaya Taniguchi</strong>, “CG for Ungrammatical Sentences:
-        Proving the Unprovability”,
-        <a href="https://www.nlp.ecei.tohoku.ac.jp/research-meetings/mics/">
-          <x-abbr abbr="MiCS">
-            Michinoku Communicatoin Science Seminar
-          </x-abbr>
-        </a>, 2022, (invited)
-      </li>
-    </ol>
+    <div id="publications"></div>
     <h2>Academic work</h2>
     <ul>
       <li>Screener (Engineering), RIKEN Summer School, 2023.</li>
