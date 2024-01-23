@@ -60,36 +60,12 @@
     }
   </style>
   <script type="module">
-    const response = await fetch("./publications.json")
-    const { publications } = await response.json()
-    let html = ""
-    for(const pub of publications) {
-      html += `<h2>${pub.type}</h2>`
-      html += "<ol reversed>"
-      for(const art of pub.articles) {
-        let authors = art.authors.join(", ")
-        let title = art.title
-        let conference = art.conference || art.event || art.journal
-        if (art.number) {
-          conference = `${conference} ${art.number}`
-        }
-        if (art.volume) {
-          conference = `${conference} ${art.volume}`
-        }
-        let year = art.year
-        if (art.month) {
-          year = `${year}.${art.month}`
-        }
-        let venue = art.venue
-        if (art.organization) {
-          html += `<li>${authors}, "${title}", ${conference}, ${art.organization}, ${year}, ${venue}</li>`
-        } else {
-          html += `<li>${authors}, "${title}", ${conference}, ${year}, ${venue}</li>`
-        }
-      }
-      html += "</ol>"
-    }
-    document.getElementById("publications").innerHTML = html
+    import Alpine from "https://esm.sh/alpinejs";
+    import TOML from "https://esm.sh/toml";
+    const response = await fetch("./publications.toml");
+    const { publications } = TOML.parse(await response.text());
+    Alpine.data("app", () => ({ publications }));
+    Alpine.start();
     customElements.define("x-abbr", class extends HTMLElement {
       constructor() {
         super();
@@ -137,7 +113,19 @@
         <x-abbr>Japan Advanced Institute of Science and Technology</x-abbr>)
       </li>
     </ul>
+    <h2>Publications</h2>
     <div id="publications"></div>
+    <ol reversed x-data="app">
+      <template x-for="pub in publications">
+        <li>
+          <span x-text="pub.authors.join(', ')"></span>,
+          <span x-text="pub.title"></span>,
+          <span x-text="pub.conference || pub.event || pub.journal"></span>,
+          <span x-text="pub.year"></span>,
+          <span x-text="pub.venue"></span>
+        </li>
+      </template>
+    </ol>
     <h2>Academic work</h2>
     <ul>
       <li>Screener (Engineering), RIKEN Summer School, 2023.</li>
