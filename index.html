@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Masaya Taniguchi" />
   <meta name="description" content="Masaya Taniguchi's profile" />
-  <title>Masaya Taniguchi</title>
+  <title>Masaya Taniguchi</title>  
   <link rel="icon" href="https://cdn.jsdelivr.net/npm/@twemoji/svg@15/1f363.svg" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -69,8 +70,8 @@
     }
   </style>
   <script type="module">
-    import Alpine from "https://esm.sh/alpinejs";
-    import * as TOML from "https://esm.sh/smol-toml";
+    import Alpine from "https://cdn.jsdelivr.net/npm/alpinejs@3.13.4/+esm";
+    import * as TOML from "https://cdn.jsdelivr.net/npm/smol-toml@1.1.3/+esm";
     const response = await fetch("./publications.toml");
     const { publications } = TOML.parse(await response.text());
     publications.sort((a, b) => {
