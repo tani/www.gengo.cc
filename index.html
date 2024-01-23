@@ -50,6 +50,15 @@
           font-size: calc(1em * var(--scale));
           font-weight: calc(400 / var(--scale));
         }
+
+        .tag {
+          display: inline-block;
+          padding: 0.1em 0.5em;
+          border-radius: 0.5em;
+          background-color: #eee;
+          font-size: 0.8em;
+          margin-left: 0.5em;
+        }
       }
     }
 
@@ -61,9 +70,14 @@
   </style>
   <script type="module">
     import Alpine from "https://esm.sh/alpinejs";
-    import TOML from "https://esm.sh/toml";
+    import * as TOML from "https://esm.sh/smol-toml";
     const response = await fetch("./publications.toml");
     const { publications } = TOML.parse(await response.text());
+    publications.sort((a, b) => {
+      if (a.year > b.year) return -1;
+      if (a.year < b.year) return 1;
+      return (b.month ?? 0) - (a.month ?? 0);
+    });
     Alpine.data("app", () => ({ publications }));
     Alpine.start();
     customElements.define("x-abbr", class extends HTMLElement {
@@ -113,7 +127,7 @@
         <x-abbr>Japan Advanced Institute of Science and Technology</x-abbr>)
       </li>
     </ul>
-    <h2>Publications</h2>
+    <h2>Publications and Talks</h2>
     <div id="publications"></div>
     <ol reversed x-data="app">
       <template x-for="pub in publications">
@@ -121,8 +135,15 @@
           <span x-text="pub.authors.join(', ')"></span>,
           <span x-text="pub.title"></span>,
           <span x-text="pub.conference || pub.event || pub.journal"></span>,
-          <span x-text="pub.year"></span>,
+          <template x-if="pub.organization">
+            <span x-text="pub.organization"></span>,
+          </template>
+          <span x-text="pub.year"></span>.<span x-text="pub.month"></span>,
           <span x-text="pub.venue"></span>
+          <span class="tag" x-text="pub.type"></span>
+          <template x-if="pub.refereed">
+            <span class="tag">Refereed</span>
+          </template>
         </li>
       </template>
     </ol>

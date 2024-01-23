@@ -5,96 +5,117 @@ authors = [ "Masaya Taniguchi", "Satoshi Tojo" ]
 journal = "Journal of Intelligent Informatics and Smart Technology"
 volume = 8
 year = 2022
+refereed = true
 
 [[publications]]
-type = "International conference (Refereed)"
+type = "International Conference"
 title = "Left-branching tree in CCG with D combinator"
 authors = [ "Masaya Taniguchi", "Satoshi Tojo" ]
 conference = "Logic and Engineering of Natural Language Semantics"
 number = 19
 year = 2022
+month = 11
 venue = "Tokyo, Japan"
+refereed = true
 
 [[publications]]
-type = "International conference (Refereed)"
+type = "International Conference"
 title = "Decidable Parsing Algorithm for Categorial Grammar with Type-raising"
 authors = [ "Masaya Taniguchi" ]
 conference = "The Proof theory Society workshop"
 year = 2022
+month = 11
 venue = "Utrecht, Netherlands"
+refereed = true
 
 [[publications]]
-type = "International conference (Refereed)"
+type = "International Conference"
 title = "Losing a Head in Grammar Extraction"
 authors = [ "Masaya Taniguchi", "Satoshi Tojo" ]
 conference = "Knowledge and Systems Engineering"
 number = 14
 year = 2022
+month = 10
 venue = "Nha Trang, Vietnam"
+refereed = true
 
 [[publications]]
-type = "International conference (Refereed)"
+type = "International Conference"
 title = "Interactive CCG Parsing with Incremental Trees"
 authors = [ "Masaya Taniguchi", "Satoshi Tojo", "Koji Mineshima" ]
 conference = "Bridges and Caps between Formal and Computational Linguistics of European Summer School in Logic, Language and Information"
 year = 2022
+month = 8
 venue = "Galway, Ireland"
+refereed = true
 
 [[publications]]
-type = "International conference (Refereed)"
+type = "International Conference"
 title = "Unprovability of Continuation-Passing Style Transformation in Lambek Calculus"
 authors = [ "Masaya Taniguchi" ]
 conference = "Student Session of European Summer School in Logic, Language and Information"
 year = 2022
+month = 8
 venue = "Galway, Ireland"
+refereed = true
 
 [[publications]]
-type = "International conference (Refereed)"
+type = "International Conference"
 title = "Incremental derivations with Q combinator in CCG"
 authors = [ "Masaya Taniguchi", "Satoshi Tojo" ]
 conference = "Logic and Engineering of Natural Language Semantics"
 number = 18
 year = 2021
+month = 11
 venue = "Online"
+refereed = true
 
 [[publications]]
-type = "International conference (Refereed)"
+type = "International Conference"
 title = "Interactive Grammar Extraction from a Treebank"
 authors = [ "Masaya Taniguchi", "Satoshi Tojo" ]
 conference = "Knowledge, Information and Creativity Support Systems"
 number = 16
 year = 2021
+month = 11
 venue = "Bangkok, Thailand"
+refereed = true
 
 [[publications]]
-type = "International conference (Refereed)"
+type = "International Conference"
 title = "Generic Framework to Uncross Dependency"
 authors = [ "Masaya Taniguchi", "Satoshi Tojo" ]
 conference = "Artifical Life and Robotics"
 number = 25
 year = 2020
+month = 1
 venue = "Beppu, Japan"
+refereed = true
 
 [[publications]]
-type = "International conference (Refereed)"
+type = "International Conference"
 title = "Finding Grammar in Music by Evolutionary Linguistics"
 authors = [ "Hiroki Sudo", "Masaya Taniguchi", "Satoshi Tojo" ]
 conference = "Knowledge, Information and Creativity Support Systems"
 number = 13
 year = 2018
+month = 11
 venue = "Phatthaya, Thailand"
+refereed = true
 
 [[publications]]
-type = "International conference (Refereed)"
+type = "International Conference"
 title = "4-valued Logic for Agent Communication with Private / Public Information Passing"
 authors = [ "Song Yang", "Masaya Taniguchi", "Satoshi Tojo" ]
 conference = "International Conference on Agents and Artificial intelligence"
 number = 11
 year = 2019
+month = 2
 venue = "Prague, Czech Republic"
+refereed = true
 
 [[publications]]
-type = "Conference"
+type = "Domestic Conference"
 title = "Context-sensitive Extension of Lambek Calculus"
 authors = [ "Masaya Taniguchi" ]
 conference = "MLG数理論理学研究集会"
@@ -104,7 +125,7 @@ month = 2
 venue = "Miyagi, Japan"
 
 [[publications]]
-type = "Conference"
+type = "Domestic Conference"
 title = "言語モデルの思考連鎖的推論における探索戦略の動的変化"
 authors = [ "青木洋一", "工藤慧音", "曾根周作", "栗林樹生", "谷口雅弥", "坂口慶祐", "乾健太郎" ]
 conference = "言語処理学会第30回年次大会"
@@ -113,7 +134,7 @@ year = 2024
 venue = "Kobe, Japan"
 
 [[publications]]
-type = "Conference"
+type = "Domestic Conference"
 title = "検出器の判断に基づく大規模言語モデルの生成テキストの特徴分析"
 authors = [ "三浦東子", "谷口雅弥", "坂口慶祐", "乾健太郎" ]
 conference = "言語処理学会第30回年次大会"
@@ -122,7 +143,7 @@ year = 2024
 venue = "Kobe, Japan"
 
 [[publications]]
-type = "Conference"
+type = "Domestic Conference"
 title = "J-UniMorph: 日本語の形態論における意味分類の体系化"
 authors = [ "松﨑孝介", "谷口雅弥", "乾健太郎", "坂口慶祐" ]
 conference = "言語処理学会第30回年次大会"
@@ -131,7 +152,7 @@ year = 2024
 venue = "Kobe, Japan"
 
 [[publications]]
-type = "Conference"
+type = "Domestic Conference"
 title = "算術推論問題における自己回帰型言語モデルの内部機序"
 authors = [ "青木洋一", "工藤慧音", "栗林樹生", "谷口雅弥", "曾根周作", "坂口慶祐", "乾健太郎" ]
 conference = "言語処理学会第30回年次大会"
@@ -140,7 +161,7 @@ year = 2024
 venue = "Kobe, Japan"
 
 [[publications]]
-type = "Conference"
+type = "Domestic Conference"
 title = "範疇文法の計算論的解釈"
 authors = [ "谷口雅弥" ]
 conference = "言語学フェス"
@@ -149,7 +170,7 @@ month = 1
 venue = "Online"
 
 [[publications]]
-type = "Conference"
+type = "Domestic Conference"
 title = "定理証明支援系によるプログラミング支援：言語学から工学への橋渡し"
 authors = [ "谷口雅弥" ]
 conference = "第９回 山陰 数学と基礎論研究集会"
@@ -158,7 +179,7 @@ month = 1
 venue = "Tottori, Japan"
 
 [[publications]]
-type = "Conference"
+type = "Domestic Conference"
 title = "Structural Connection between Directional Implications and Type-Raising"
 authors = [ "谷口雅弥" ]
 conference = "証明論と計算論の最前線"
@@ -167,7 +188,7 @@ month = 12
 venue = "Kyoto, Japan"
 
 [[publications]]
-type = "Conference"
+type = "Domestic Conference"
 title = "速習ランベック計算"
 authors = [ "谷口雅弥" ]
 conference = "数学基礎論若手の会"
@@ -176,7 +197,7 @@ month = 12
 venue = "Chiba, Japan"
 
 [[publications]]
-type = "Conference"
+type = "Domestic Conference"
 title = "Computational Complexity of Combinatory Categorical Grammar"
 authors = [ "谷口雅弥" ]
 conference = "若手による数理論理研究集会"
@@ -185,7 +206,7 @@ month = 12
 venue = "Tokyo, Japan"
 
 [[publications]]
-type = "Conference"
+type = "Domestic Conference"
 title = "日本語学習のための形態意味中心の動詞活用"
 authors = [
   "Kosuke Matsuzaki",
@@ -199,7 +220,7 @@ month = 7
 venue = "Tokyo, Japan"
 
 [[publications]]
-type = "Conference"
+type = "Domestic Conference"
 title = "ランベック計算LCと範疇文法CGの等価性"
 authors = [ "谷口雅弥" ]
 conference = "第8回山陰基礎論と数学およびその周辺の研究集会"
@@ -208,7 +229,7 @@ month = 1
 venue = "Tottori, Japan"
 
 [[publications]]
-type = "Conference"
+type = "Domestic Conference"
 title = "Incremental Parsing: Categorial Grammars and Lambek-style Calculi"
 authors = [ "谷口雅弥" ]
 conference = "Substructural Logic Workshop"
@@ -218,7 +239,7 @@ url = "https://www.jaist.ac.jp/~s2020029/substructural_logic_workshop.html"
 venue = "Ishikawa, Japan"
 
 [[publications]]
-type = "Conference"
+type = "Domestic Conference"
 title = "Formalization of Categorial Grammar"
 authors = [ "谷口雅弥" ]
 conference = "Theorem Proving and Provers meeting"
@@ -228,7 +249,7 @@ year = 2021
 venue = "Hokkaido, Japan"
 
 [[publications]]
-type = "Conference"
+type = "Domestic Conference"
 title = "Continuations and Polymorphic Lambek Calculus"
 authors = [ "谷口雅弥" ]
 conference = "論理・言語・代数系と計算機科学の周辺領域"
@@ -237,7 +258,7 @@ year = 2021
 venue = "Online"
 
 [[publications]]
-type = "Conference"
+type = "Domestic Conference"
 title = "CPS変換と多相範疇文法"
 authors = [ "谷口雅弥" ]
 conference = "Symbolic Logic And Computer Science"
@@ -246,7 +267,7 @@ year = 2020
 venue = "Online"
 
 [[publications]]
-type = "Conference"
+type = "Domestic Conference"
 title = "Introduction to Montague Grammar"
 authors = [ "谷口雅弥" ]
 conference = "数学基礎論若手の会"
@@ -254,8 +275,8 @@ month = 11
 year = 2018
 venue = "Okinawa, Japan"
 
-[[publications]]
-type = "Conference"
+[[publicnations]]
+type = "Domestic Conference"
 title = "Subjunctive Markers and Delimited Continuations"
 authors = [ "谷口雅弥" ]
 conference = "Symbolic Logic And Computer Science"
@@ -264,65 +285,72 @@ month = 12
 venue = "Kyoto, Japan"
 
 [[publications]]
-type = "Talks"
+type = "Talk"
 title = "Selling your research: what we did to get people to use categorical grammar"
 authors = [ "Masaya Taniguchi" ]
 event = "Discovery Evening"
 organization = "RIKEN"
 year = 2024
+month = 2
 venue = "Saitama, Japan"
 
 [[publications]]
-type = "Talks"
+type = "Talk"
 title = "Mathematics in Natural Language"
 authors = [ "Masaya Taniguchi" ]
 event = "Guest Lecture (Lecture for Natural Language Processing)"
 organization = "Information Science Department, Tohoku University"
 year = 2023
+month = 12
 venue = "Miyagi, Japan"
 
 [[publications]]
-type = "Talks"
+type = "Talk"
 title = "範疇文法の決定可能性"
 authors = [ "谷口雅弥" ]
 event = "Matsuzaki Laboratory Seminar"
 organization = "Applied Mathematics Department, Tokyo University of Science"
 year = 2023
+month = 12
 venue = "Tokyo, Japan"
 
 [[publications]]
-type = "Talks"
+type = "Talk"
 title = "数理言語学から見るLambek"
 authors = [ "谷口雅弥" ]
 event = "Hasegawa Laboratory Seminar"
 organization_en = "Research Institute for Mathematical Sciences, Kyoto University"
 year = 2023
+month = 12
 venue = "Kyoto, Japan"
 
 [[publications]]
-type = "Talks"
+type = "Talk"
 title = "Bridging the Gap: Combinatorial Categorical Grammars and Proof Theory"
 authors = [ "谷口雅弥" ]
 event = "Computational Logic Seminar"
 organization = "Technische Universität Wien"
 year = 2023
+month = 7
 venue = "Vienna, Austria"
 
 [[publications]]
-type = "Talks"
+type = "Talk"
 title = "Proof Theoretic Linguistics"
 authors = [ "谷口雅弥" ]
 event = "Sendai Logic Group Seminar"
 organization_en = "Department of Mathematics, Tohoku University"
 year = 2023
+month = 5
 venue = "Miyagi, Japan"
 
 [[publications]]
-type = "Talks"
+type = "Talk"
 title = "CG for Ungrammatical Sentences: Proving the Unprovability"
 authors = [ "谷口雅弥" ]
 event = "Michinoku Communicatoin Science Seminar"
 organization = "TohokuNLP, Tohoku University"
 year = 2022
+month = 10
 url = "https://www.nlp.ecei.tohoku.ac.jp/research-meetings/mics/"
 venue = "Miyagi, Japan"
