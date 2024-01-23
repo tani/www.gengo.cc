@@ -7,25 +7,18 @@
   <meta name="author" content="Masaya Taniguchi" />
   <meta name="description" content="Masaya Taniguchi's profile" />
   <title>Masaya Taniguchi</title>  
-  <link rel="icon" href="https://cdn.jsdelivr.net/npm/@twemoji/svg@15/1f363.svg" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
-    rel="stylesheet" />
+  <link rel="icon" href="https://cdn.jsdelivr.net/npm/@twemoji/svg@15/1f363.svg" />
   <style>
     body {
-      --1ch: 0.5em;
-      font-family: "Source Sans 3", "Noto Sans JP", sans-serif;
+      font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
       font-weight: 400;
       background-color: #fafafa;
-
       main {
-        max-width: calc(var(--1ch) * 80);
+        max-width: 80ch;
         width: 80%;
         margin: 0 auto;
-        padding: 0 calc(var(--1ch) * 2);
+        padding: 0 2ch;
 
         h1 {
           font-weight: 900;
@@ -46,12 +39,22 @@
         }
 
         code {
-          --scale: 0.9;
-          font-family: "Source Code Pro", "Noto Sans JP", monospace;
-          font-size: calc(1em * var(--scale));
-          font-weight: calc(400 / var(--scale));
+          font-family: Menlo, Consolas, "Courier New", Courier, monospace;
         }
-
+        
+        x-abbr {
+          color: inherit;
+          &:not(:defined) {
+            color: transparent;
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            width: 3ch;
+            height: 1em;
+          }
+        }
+        
         .tag {
           display: inline-block;
           padding: 0.1em 0.5em;
@@ -62,13 +65,23 @@
         }
       }
     }
-
     @media (min-width: 481px) {
       main {
         text-align: justify;
       }
     }
   </style>
+  <script type="module">
+    customElements.define("x-abbr", class extends HTMLElement {
+      constructor() {
+        super();
+        const abbr = this.getAttribute("abbr") ?? this.innerHTML.replace(/[^A-Z]/g, "");
+        const title= this.innerHTML.trim();
+        const shadow = this.attachShadow({ mode: "closed" });
+        shadow.innerHTML = `<abbr title="${title}">${abbr}</abbr>`;
+      }
+    });
+  </script>
   <script type="module">
     import Alpine from "https://cdn.jsdelivr.net/npm/alpinejs@3.13.4/+esm";
     import * as TOML from "https://cdn.jsdelivr.net/npm/smol-toml@1.1.3/+esm";
@@ -81,15 +94,6 @@
     });
     Alpine.data("app", () => ({ publications }));
     Alpine.start();
-    customElements.define("x-abbr", class extends HTMLElement {
-      constructor() {
-        super();
-        const abbr = this.getAttribute("abbr") ?? this.innerHTML.replace(/[^A-Z]/g, "");
-        const title= this.innerHTML.trim();
-        const shadow = this.attachShadow({ mode: "closed" });
-        shadow.innerHTML = `<abbr title="${title}">${abbr}</abbr>`;
-      }
-    });
   </script>
 </head>
 
