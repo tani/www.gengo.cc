@@ -42,17 +42,14 @@
           font-family: Menlo, Consolas, "Courier New", Courier, monospace;
         }
         
-        x-abbr {
-          color: inherit;
-          &:not(:defined) {
-            color: transparent;
-            display: inline-block;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            width: 3ch;
-            height: 1em;
-          }
+        x-abbr:not(:defined) {
+          color: transparent;
+          display: inline-block;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          width: 3ch;
+          height: 1em;
         }
         
         .tag {
@@ -63,6 +60,11 @@
           font-size: 0.8em;
           margin-left: 0.5em;
         }
+
+        mjx-container[display="block"] {
+          display: block;
+          margin: 1em 0;
+        }
       }
     }
     @media (min-width: 481px) {
@@ -71,6 +73,37 @@
       }
     }
   </style>
+  <script>
+    MathJax = {
+      loader: {load: ['input/tex', 'ui/menu']},
+      startup: {
+        pageReady() {
+          MathJax.startup.document.menu.menu.findID('Accessibility', 'AssistiveMml').disable();
+          MathJax._.mathjax.mathjax.handleRetriesFor(() => MathJax.startup.document.render());
+        }
+      },
+      options: {
+        renderActions: {
+          assistiveMml: [],
+          typeset: [150,
+            (doc) => {for (math of doc.math) {MathJax.config.renderMathML(math, doc)}},
+            (math, doc) => MathJax.config.renderMathML(math, doc)
+          ]
+        },
+        menuOptions: {
+          settings: {
+            assistiveMml: false
+          }
+        }
+      },
+      renderMathML(math, doc) {
+        math.typesetRoot = document.createElement('mjx-container');
+        math.typesetRoot.innerHTML = MathJax.startup.toMML(math.root);
+        math.display && math.typesetRoot.setAttribute('display', 'block');
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js"></script>
   <script type="module">
     customElements.define("x-abbr", class extends HTMLElement {
       constructor() {
@@ -81,7 +114,7 @@
         shadow.innerHTML = `<abbr title="${title}">${abbr}</abbr>`;
       }
     });
-  </script>
+  </script>  
   <script type="module">
     import Alpine from "https://cdn.jsdelivr.net/npm/alpinejs@3.13.4/+esm";
     import * as TOML from "https://cdn.jsdelivr.net/npm/smol-toml@1.1.3/+esm";
