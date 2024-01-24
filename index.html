@@ -116,8 +116,8 @@
     });
   </script>  
   <script type="module">
-    import Alpine from "https://cdn.jsdelivr.net/npm/alpinejs@3.13.4/+esm";
-    import * as TOML from "https://cdn.jsdelivr.net/npm/smol-toml@1.1.3/+esm";
+    import Alpine from "https://esm.sh/alpinejs@3";
+    import * as TOML from "https://esm.sh/smol-toml@1";
     const response = await fetch("./publications.toml");
     const { publications } = TOML.parse(await response.text());
     publications.sort((a, b) => {
@@ -128,8 +128,14 @@
     Alpine.data("app", () => ({ publications }));
     Alpine.start();
   </script>
+  <script type="module">
+    const sass = await import('https://esm.sh/sass@1');
+    const styles = document.getElementsByTagName('style');
+    for(const style of styles) {
+      style.innerHTML = sass.compileString(style.innerHTML).css;
+    }
+  </script>  
 </head>
-
 <body>
   <main>
     <h1>Profile</h1>
