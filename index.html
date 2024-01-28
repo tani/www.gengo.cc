@@ -61,7 +61,14 @@
           font-size: 0.8em;
           margin-left: 0.5em;
         }
-
+        
+        .abstract div {
+          margin: 0.5em 0;
+          padding: 0.5em;
+          border-radius: 0.5em;
+          background-color: #eee;
+        }
+        
         mjx-container[display="block"] {
           display: block;
           margin: 1em 0;
@@ -129,13 +136,6 @@
     Alpine.data("app", () => ({ publications }));
     Alpine.start();
   </script>
-  <script type="module">
-    const sass = await import('https://esm.sh/sass@1');
-    const styles = document.getElementsByTagName('style');
-    for(const style of styles) {
-      style.innerHTML = sass.compileString(style.innerHTML).css;
-    }
-  </script>  
 </head>
 <body>
   <main>
@@ -188,6 +188,14 @@
           <span class="tag" x-text="pub.type"></span>
           <template x-if="pub.refereed">
             <span class="tag">Refereed</span>
+          </template>
+          <template x-if="pub.abstract">
+            <span x-data="{ open: false }" class="abstract">
+              <span class="tag" x-on:click="open = !open">
+                Abstract is available
+              </span>
+              <div x-show="open" x-text="pub.abstract"></div>
+            </span>
           </template>
         </li>
       </template>
