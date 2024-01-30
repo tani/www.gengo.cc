@@ -10,83 +10,20 @@
   <link rel="preconnect" href="https://raw.esm.sh" />
   <link rel="preconnect" href="https://esm.sh" />
   <link rel="icon" href="https://raw.esm.sh/@twemoji/svg@15/1f363.svg" />
-  <style>
-    body {
-      font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-      font-weight: 400;
-      background-color: #fafafa;
-      main {
-        max-width: 80ch;
-        width: 80%;
-        margin: 0 auto;
-        padding: 0 2ch;
-
-        h1 {
-          font-weight: 900;
-          background-image: linear-gradient(-135deg, #EECE13, #B210FF);
-          background-clip: text;
-          color: rgba(0, 0, 0, 0);
-          text-align: center;
-          margin: 5dvh 0;
-
-          &+div {
-            text-align: center;
-            margin-bottom: 5dvh;
-          }
-        }
-
-        li {
-          margin: 0.5em 0;
-        }
-
-        code {
-          font-family: Menlo, Consolas, "Courier New", Courier, monospace;
-        }
-        
-        x-abbr:not(:defined) {
-          color: transparent;
-          display: inline-block;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-          width: 3ch;
-          height: 1em;
-        }
-        
-        .tag {
-          display: inline-block;
-          padding: 0.1em 0.5em;
-          border-radius: 0.5em;
-          background-color: #eee;
-          font-size: 0.8em;
-          margin-left: 0.5em;
-        }
-        
-        .abstract div {
-          margin: 0.5em 0;
-          padding: 0.5em;
-          border-radius: 0.5em;
-          background-color: #eee;
-        }
-        
-        mjx-container[display="block"] {
-          display: block;
-          margin: 1em 0;
-        }
-      }
-    }
-    @media (min-width: 481px) {
-      main {
-        text-align: justify;
-      }
-    }
-  </style>
+  <script type="module">
+    import {setup} from "https://esm.sh/@twind/core@1";
+    import autoprefix from "https://esm.sh/@twind/preset-autoprefix@1";
+    import typography from "https://esm.sh/@twind/preset-typography@1";
+    import tailwind from "https://esm.sh/@twind/preset-tailwind@1";
+    setup({
+      presets: [tailwind(), typography(), autoprefix()],
+    })
+  </script>
   <script>
     MathJax = {
-      loader: {load: ['input/tex', 'ui/menu']},
+      loader: {load: ['input/tex']},
       startup: {
         pageReady() {
-          MathJax.startup.document.menu.menu.findID('Accessibility', 'AssistiveMml').disable();
           MathJax._.mathjax.mathjax.handleRetriesFor(() => MathJax.startup.document.render());
         }
       },
@@ -97,11 +34,6 @@
             (doc) => {for (math of doc.math) {MathJax.config.renderMathML(math, doc)}},
             (math, doc) => MathJax.config.renderMathML(math, doc)
           ]
-        },
-        menuOptions: {
-          settings: {
-            assistiveMml: false
-          }
         }
       },
       renderMathML(math, doc) {
@@ -137,10 +69,10 @@
     Alpine.start();
   </script>
 </head>
-<body>
-  <main>
-    <h1>Profile</h1>
-    <div>
+<body class="py-2">
+  <main class="prose mx-auto text-justify">
+    <h1 class="text-center">Profile</h1>
+    <div class="text-center">
       Masaya Taniguchi<br />
       RIKEN Center of <x-abbr>Advanced Intelligence Project</x-abbr><br />
       <code>&lt;first name&gt;.&lt;last name&gt;@riken.jp</code>
@@ -185,16 +117,18 @@
           </template>
           <span x-text="pub.year"></span>.<span x-text="pub.month"></span>,
           <span x-text="pub.venue"></span>
-          <span class="tag" x-text="pub.type"></span>
+          <span class="inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-bold mr-3" x-text="pub.type"></span>
           <template x-if="pub.refereed">
-            <span class="tag">Refereed</span>
+            <span class="inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-bold mr-3">refereed</span>
           </template>
           <template x-if="pub.abstract">
             <span x-data="{ open: false }" class="abstract">
-              <span class="tag" x-on:click="open = !open">
+              <span>
+              <span class="inline-block bg-red-200 cursor-pointer rounded-full px-2 py-1 text-xs font-bold mr-3" x-on:click="open = !open">
                 Abstract is available
               </span>
-              <div x-show="open" x-text="pub.abstract"></div>
+              </span>
+              <div class="bg-gray-100  rounded-md px-2 py-1 mt-2 mr-3" x-show="open" x-text="pub.abstract"></div>
             </span>
           </template>
         </li>
