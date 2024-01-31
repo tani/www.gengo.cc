@@ -24,26 +24,23 @@
       loader: {load: ['input/tex']},
       startup: {
         pageReady() {
-          MathJax._.mathjax.mathjax.handleRetriesFor(() => MathJax.startup.document.render());
+          customElements.define("x-math", class extends HTMLElement {
+            constructor() {
+              super();
+              const content = this.innerHTML;
+              const isDisplay = this.attributes.display;
+              MathJax.tex2mmlPromise(content, {display: isDisplay}).then(mml => {
+                const shadow = this.attachShadow({ mode: "closed" });
+                shadow.innerHTML = `<style> math { display: ${isDisplay ? "block" : "inline"}; } </style>`
+                shadow.innerHTML += mml;
+              });
+            }
+          });
         }
-      },
-      options: {
-        renderActions: {
-          assistiveMml: [],
-          typeset: [150,
-            (doc) => {for (math of doc.math) {MathJax.config.renderMathML(math, doc)}},
-            (math, doc) => MathJax.config.renderMathML(math, doc)
-          ]
-        }
-      },
-      renderMathML(math, doc) {
-        math.typesetRoot = document.createElement('mjx-container');
-        math.typesetRoot.innerHTML = MathJax.startup.toMML(math.root);
-        math.display && math.typesetRoot.setAttribute('display', 'block');
       }
     };
   </script>
-  <script type="text/javascript" id="MathJax-script" async src="https://raw.esm.sh/mathjax@3/es5/startup.js"></script>
+  <script id="MathJax-script" async src="https://raw.esm.sh/mathjax@3/es5/startup.js"></script>
   <script type="module">
     customElements.define("x-abbr", class extends HTMLElement {
       constructor() {
