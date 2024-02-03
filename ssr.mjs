@@ -4,9 +4,8 @@ import { serve } from '@hono/node-server'
 import fs from 'fs/promises';
 
 const app = new Hono();
-
 app.get('/', (ctx) => ctx.redirect('/index.html'));
-app.get('/*.html', async (ctx) => {
+app.get('/index.html', async (ctx) => {
     let resolve;
     let reject;
     const promise = new Promise((res, rej) => {
@@ -14,14 +13,22 @@ app.get('/*.html', async (ctx) => {
         reject = rej;
     });
     const virtualConsole = new VirtualConsole();
-    virtualConsole.on('error', (...e) => { console.error(...e) })
-    const dom = await JSDOM.fromFile(`.${ctx.req.path}`, {
+    virtualConsole.on('error', (...e) => { console.error(...e); });
+    virtualConsole.on('log', (...e) => { console.log(...e); });
+    const dom = await JSDOM.fromURL(`http://localhost:3000/_ssr${ctx.req.path}`, {
         runScripts: 'dangerously',
         resources: 'usable',
         pretendToBeVisual: true,
         virtualConsole,
         beforeParse(window) {
-            window.fetch = fetch;
+            window.fetch = async (url) => {
+                if (url.startsWith('http')) {
+                    return fetch(url)
+                } else {
+                    const data = await fs.readFile(url)
+                    return new Response(data)
+                }
+            }
             window.__finalize = resolve;
             window.__cancel = reject;
         }
@@ -31,9 +38,12 @@ app.get('/*.html', async (ctx) => {
     dom.window.close();
     return ctx.html(html);
 });
-app.get('/*.toml', async (ctx) => {
-    ctx.req.path;
+app.get('/publications.toml', async (ctx) => {
     const data = await fs.readFile(`.${ctx.req.path}`, 'utf-8');
     return ctx.text(data);
 });
+app.get('/_ssr/:filename', async (ctx) => {
+    const data = await fs.readFile(`${ctx.req.param('filename')}`, 'utf-8');
+    return ctx.html(data);
+})
 serve(app);

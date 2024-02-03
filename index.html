@@ -6,19 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Masaya Taniguchi" />
   <meta name="description" content="Masaya Taniguchi's profile" />
-  <title>Masaya Taniguchi</title>  
-  <link rel="preconnect" href="https://raw.esm.sh" />
-  <link rel="preconnect" href="https://esm.sh" />
-  <link rel="icon" href="https://raw.esm.sh/@twemoji/svg@15/1f363.svg" />
-  <script type="module">
-    import {setup} from "https://esm.sh/@twind/core@1";
-    import autoprefix from "https://esm.sh/@twind/preset-autoprefix@1";
-    import typography from "https://esm.sh/@twind/preset-typography@1";
-    import tailwind from "https://esm.sh/@twind/preset-tailwind@1";
-    setup({
-      presets: [tailwind(), typography(), autoprefix()],
-    })
-  </script>
+  <title>Masaya Taniguchi</title>
+  <link rel="icon" href="https://cdn.jsdelivr.net/npm/@twemoji/svg@15/1f363.svg" />
   <script>
     MathJax = {
       loader: {load: ['input/tex']},
@@ -41,6 +30,7 @@
     };
   </script>
   <script id="MathJax-script" async src="https://raw.esm.sh/mathjax@3/es5/startup.js"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/@unocss/runtime@0.58.4/full.global.js"></script>
   <script type="module">
     customElements.define("x-abbr", class extends HTMLElement {
       constructor() {
@@ -51,28 +41,32 @@
         shadow.innerHTML = `<abbr title="${title}">${abbr}</abbr>`;
       }
     });
-  </script>  
-  <script type="module">
-    import Alpine from "https://esm.sh/alpinejs@3";
-    import * as TOML from "https://esm.sh/smol-toml@1";
-    const response = await fetch("./publications.toml");
-    const { publications } = TOML.parse(await response.text());
-    publications.sort((a, b) => {
-      if (a.year > b.year) return -1;
-      if (a.year < b.year) return 1;
-      return (b.month ?? 0) - (a.month ?? 0);
-    });
-    Alpine.data("app", () => ({ publications }));
-    Alpine.start();
   </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js"></script>
   <script>
-    window.__finalize?.();
+    document.addEventListener('alpine:init', () => {
+      Alpine.data("app", () => ({
+        publications: [],
+        async init() {
+          const response = await fetch("./publications.toml");
+          const text = await response.text();
+          const TOML = await import('https://cdn.jsdelivr.net/npm/smol-toml@1/+esm');
+          const { publications } = TOML.parse(text);
+          publications.sort((a, b) => {
+            if (a.year > b.year) return -1;
+            if (a.year < b.year) return 1;
+            return (b.month ?? 0) - (a.month ?? 0);
+          });
+          this.publications = publications
+        }
+      }));
+    });
   </script>
 </head>
-<body class="py-2 sm:px-0 px-5">
-  <main class="prose mx-auto sm:text-justify">
-    <h1 class="text-center">Profile</h1>
-    <div class="text-center">
+<body py="2" px="sm:0 5">
+  <main font="sans" prose="~ stone" mx="auto" text="sm:justify">
+    <h1 text="center">Profile</h1>
+    <div text="center">
       Masaya Taniguchi<br />
       RIKEN Center of <x-abbr>Advanced Intelligence Project</x-abbr><br />
       <code>&lt;first name&gt;.&lt;last name&gt;@riken.jp</code>
@@ -105,7 +99,6 @@
       </li>
     </ul>
     <h2>Publications and Talks</h2>
-    <div id="publications"></div>
     <ol reversed x-data="app">
       <template x-for="pub in publications">
         <li>
@@ -117,18 +110,18 @@
           </template>
           <span x-text="pub.year"></span>.<span x-text="pub.month"></span>,
           <span x-text="pub.venue"></span>
-          <span class="inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-bold mr-3" x-text="pub.type"></span>
+          <span inline-block bg="gray-200" rounded="full" px="2" py="1" text="xs" font="bold" mr="3" x-text="pub.type"></span>
           <template x-if="pub.refereed">
-            <span class="inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-bold mr-3">refereed</span>
+            <span inline-block  bg="gray-200" rounded="full" px="2" py="1" text="xs" font="bold" mr="3">refereed</span>
           </template>
           <template x-if="pub.abstract">
-            <span x-data="{ open: false }" class="abstract">
+            <span x-data="{ open: false }">
               <span>
-              <span class="inline-block bg-red-200 cursor-pointer rounded-full px-2 py-1 text-xs font-bold mr-3" x-on:click="open = !open">
+              <span inline-block bg="emerald-200" cursor="pointer" rounded="full" px="2" py="1" text="xs" font="bold" mr="3" x-on:click="open = !open">
                 Abstract is available
               </span>
               </span>
-              <div class="bg-gray-100  rounded-md px-2 py-1 mt-2 mr-3" x-show="open" x-text="pub.abstract"></div>
+              <div bg="gray-100" rounded="md" px="2" py="1" mt="2" mr="3" x-show="open" x-text="pub.abstract"></div>
             </span>
           </template>
         </li>
