@@ -1,4 +1,18 @@
 [[publications]]
+type = "Talk"
+title = "Lambek Calculus for Context-sensitive Language"
+authors = ["Masaya Taniguchi"]
+event = "Ookayama Mathematical Logic Seminar"
+year = 2024
+month = 2
+abstract = """
+This talk is about making a certain kind of grammar, called mildly context-sensitive grammar, more formal. We're looking at formal languages, and they're related to ideas in mathematical logic. In particular, the way we formalize context-free grammar has a lot to do with results in mathematical logic.
+Back in 1958, Joachim Lambek organised categorical grammar using sequent calculus. Then Martin Pentus showed that Lambek's system was the same as context-free grammar. In the 1990s, Mark Steedman also introduced combinatorial categorical grammar using combinatorial logic, providing a new way of formalising categorical grammar. This grammar has more expressive power than context-free grammar.
+Thus, there are two ways to formalise and develop categorical grammar. The aim of this study is to extend Lambek's system so that it can express things in the same powerful way as Steedman's system.
+First, we introduce categorial grammar and show the context-free grammar and the context-sensitive grammar. Then we formalise the grammar in Lambek calculus and show our extension. Finally, we discuss the logical property from the point of view of mathematical logic.
+"""
+
+[[publications]]
 type = "Journal"
 title = "Interactive Grammar Extraction from a TreeBank"
 authors = [ "Masaya Taniguchi", "Satoshi Tojo" ]
@@ -460,7 +474,7 @@ month = 11
 year = 2018
 venue = "Okinawa, Japan"
 
-[[publicnations]]
+[[publications]]
 type = "Domestic Conference"
 title = "Subjunctive Markers and Delimited Continuations"
 authors = [ "谷口雅弥" ]
