@@ -7,30 +7,51 @@
   <meta name="author" content="Masaya Taniguchi" />
   <meta name="description" content="Masaya Taniguchi's profile" />
   <title>Masaya Taniguchi</title>
-  <link rel="icon" href="https://cdn.jsdelivr.net/npm/@twemoji/svg@15/1f363.svg" />
-  <script>
-    MathJax = {
-      loader: {load: ['input/tex']},
-      startup: {
-        pageReady() {
-          customElements.define("x-math", class extends HTMLElement {
-            constructor() {
-              super();
-              const content = this.innerHTML;
-              const isDisplay = this.attributes.display;
-              MathJax.tex2mmlPromise(content, {display: isDisplay}).then(mml => {
-                const shadow = this.attachShadow({ mode: "closed" });
-                shadow.innerHTML = `<style> math { display: ${isDisplay ? "block" : "inline"}; } </style>`
-                shadow.innerHTML += mml;
-              });
-            }
-          });
-        }
+  <link rel="icon" href="https://raw.esm.sh/@twemoji/svg@15/1f363.svg" />
+  <script type="module">
+    customElements.define("x-math", class extends HTMLElement {
+      async connectedCallback() {
+        const {default: build} = await import("https://esm.sh/build");
+        const mod = await build({
+          dependencies: {
+            "mathjax-full": "^3.2.2"
+          },
+          code: `
+            export {TeX} from "npm:mathjax-full/js/input/tex.js";
+            export {SVG} from "npm:mathjax-full/js/output/svg.js";
+            export {browserAdaptor} from "npm:mathjax-full/js/adaptors/browserAdaptor.js";
+            export {RegisterHTMLHandler} from "npm:mathjax-full/js/handlers/html.js";
+            export {AssistiveMmlHandler} from "npm:mathjax-full/js/a11y/assistive-mml.js";
+            export {AllPackages} from "npm:mathjax-full/js/input/tex/AllPackages.js";
+            export {mathjax} from "npm:mathjax-full/js/mathjax.js";
+          `
+        });
+        const MathJax = await import(mod.bundleUrl);
+        const tex = new MathJax.TeX({packages: MathJax.AllPackages});
+        const svg = new MathJax.SVG({fontCache: "local"});
+        const adaptor = MathJax.browserAdaptor();
+        const handler = MathJax.RegisterHTMLHandler(adaptor);
+        MathJax.AssistiveMmlHandler(handler);
+        const html = MathJax.mathjax.document(document, {InputJax: tex, OutputJax: svg});
+        const CSS = `
+          svg a { fill: blue; stroke: blue; }
+          [data-mml-node="merror"] > g { fill: red; stroke: red; }
+          [data-mml-node="merror"] > rect[data-background] { fill: yellow; stroke: none; }
+          [data-frame], [data-line] { stroke-width: 70px; fill: none; }
+          .mjx-dashed { stroke-dasharray: 140; }
+          .mjx-dotted { stroke-linecap: round; stroke-dasharray: 0, 140; }
+          use[data-c] { stroke-width: 3px; }
+        `;
+        const node = html.convert(this.innerHTML, {display: this.attributes.display});
+        let output = adaptor.outerHTML(node);
+        output = output.replace(/<defs>/, '<defs><style>' + CSS + '</style>');
+        output += '<style>' + adaptor.textContent(svg.styleSheet(html)) + '</style>';
+        const shadow = this.attachShadow({ mode: "closed" });
+        shadow.innerHTML = output;
       }
-    };
+    });
   </script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js"></script>
-  <script async src="https://cdn.jsdelivr.net/npm/@unocss/runtime@0.58.4/full.global.js"></script>
+  <script async src="https://raw.esm.sh/@unocss/runtime@0.58.4/full.global.js"></script>
   <script type="module">
     customElements.define("x-abbr", class extends HTMLElement {
       constructor() {
@@ -42,7 +63,7 @@
       }
     });
   </script>
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js"></script>
+  <script defer src="https://raw.esm.sh/alpinejs@3/dist/cdn.min.js"></script>
   <script>
     document.addEventListener('alpine:init', () => {
       Alpine.data("app", () => ({
@@ -50,7 +71,7 @@
         async init() {
           const response = await fetch("./publications.toml");
           const text = await response.text();
-          const TOML = await import('https://cdn.jsdelivr.net/npm/smol-toml@1/+esm');
+          const TOML = await import('https://esm.sh/smol-toml@1');
           const { publications } = TOML.parse(text);
           publications.sort((a, b) => {
             if (a.year > b.year) return -1;
@@ -63,8 +84,8 @@
     });
   </script>
 </head>
-<body py="2" px="sm:0 5">
-  <main font="sans" prose="~ stone" mx="auto" text="sm:justify">
+<body p="y-2 sm:x-0 x-5">
+  <main font="sans" prose="~ stone" m="x-auto" text="sm:justify">
     <h1 text="center">Profile</h1>
     <div text="center">
       Masaya Taniguchi<br />
@@ -110,18 +131,18 @@
           </template>
           <span x-text="pub.year"></span>.<span x-text="pub.month"></span>,
           <span x-text="pub.venue"></span>
-          <span inline-block bg="gray-200" rounded="full" px="2" py="1" text="xs" font="bold" mr="3" x-text="pub.type"></span>
+          <span inline-block bg="gray-200" rounded="full" p="x-2 y-1" text="xs" font="bold" m="r-3" x-text="pub.type"></span>
           <template x-if="pub.refereed">
-            <span inline-block  bg="gray-200" rounded="full" px="2" py="1" text="xs" font="bold" mr="3">refereed</span>
+            <span inline-block  bg="gray-200" rounded="full" p="x-2 y-1" text="xs" font="bold" m="r-3">refereed</span>
           </template>
           <template x-if="pub.abstract">
             <span x-data="{ open: false }">
               <span>
-              <span inline-block bg="emerald-200" cursor="pointer" rounded="full" px="2" py="1" text="xs" font="bold" mr="3" x-on:click="open = !open">
+              <span inline-block bg="emerald-200" cursor="pointer" rounded="full" p="x-2 y-1" text="xs" font="bold" m="r-3" x-on:click="open = !open">
                 Abstract is available
               </span>
               </span>
-              <div bg="gray-100" rounded="md" px="2" py="1" mt="2" mr="3" x-show="open" x-text="pub.abstract"></div>
+              <div bg="gray-100" rounded="md" p="x-2 y-1" m="t-2" x-show="open" x-text="pub.abstract"></div>
             </span>
           </template>
         </li>
