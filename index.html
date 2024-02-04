@@ -64,6 +64,18 @@
     });
   </script>
   <script type="module">
+    customElements.define("x-code", class extends HTMLElement {
+      async connectedCallback() {
+        const { codeToHtml } = await import("https://esm.sh/shiki@1.0.0-beta.5");
+        const shadow = this.attachShadow({ mode: "closed" });
+        shadow.innerHTML = await codeToHtml(this.innerHTML, {
+          theme: this.getAttribute("theme") ?? "vitesse-light",
+          lang: this.getAttribute("lang") ?? "text",
+        });
+      }
+    });
+  </script>
+  <script type="module">
     import Alpine from "https://esm.sh/alpinejs@3";
     import * as TOML from "https://esm.sh/smol-toml@1";
     const response = await fetch("./publications.toml");
@@ -101,7 +113,6 @@
       <li>Proof Theory of Substructural Logic</li>
       <li>Theorem Proving (Isabelle/ HOL)</li>
     </ul>
-
     <h2>Publications and Talks</h2>
     <ol reversed x-data="app">
       <template x-for="pub in publications">
