@@ -73,11 +73,7 @@
           const text = await response.text();
           const TOML = await import('https://esm.sh/smol-toml@1');
           const { publications } = TOML.parse(text);
-          publications.sort((a, b) => {
-            if (a.year > b.year) return -1;
-            if (a.year < b.year) return 1;
-            return (b.month ?? 0) - (a.month ?? 0);
-          });
+          publications.sort((a, b) => ((b.year - a.year) || (b.month ?? 0) - (a.month ?? 0)));
           this.publications = publications
         }
       }));
