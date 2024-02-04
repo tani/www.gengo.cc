@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,79 +8,14 @@
   <title>Masaya Taniguchi</title>
   <link rel="icon" href="https://raw.esm.sh/@twemoji/svg@15/1f363.svg" />
   <script async src="https://raw.esm.sh/@unocss/runtime@0.58.4/full.global.js"></script>
-  <script type="module">
-    customElements.define("x-math", class extends HTMLElement {
-      async connectedCallback() {
-        const {default: build} = await import("https://esm.sh/build");
-        const mod = await build({
-          dependencies: {
-            "mathjax-full": "^3.2.2"
-          },
-          code: `
-            export {TeX} from "npm:mathjax-full/js/input/tex.js";
-            export {SVG} from "npm:mathjax-full/js/output/svg.js";
-            export {browserAdaptor} from "npm:mathjax-full/js/adaptors/browserAdaptor.js";
-            export {RegisterHTMLHandler} from "npm:mathjax-full/js/handlers/html.js";
-            export {AssistiveMmlHandler} from "npm:mathjax-full/js/a11y/assistive-mml.js";
-            export {AllPackages} from "npm:mathjax-full/js/input/tex/AllPackages.js";
-            export {mathjax} from "npm:mathjax-full/js/mathjax.js";
-          `
-        });
-        const MathJax = await import(mod.bundleUrl);
-        const tex = new MathJax.TeX({packages: MathJax.AllPackages});
-        const svg = new MathJax.SVG({fontCache: "local"});
-        const adaptor = MathJax.browserAdaptor();
-        const handler = MathJax.RegisterHTMLHandler(adaptor);
-        MathJax.AssistiveMmlHandler(handler);
-        const html = MathJax.mathjax.document(document, {InputJax: tex, OutputJax: svg});
-        const CSS = `
-          svg a { fill: blue; stroke: blue; }
-          [data-mml-node="merror"] > g { fill: red; stroke: red; }
-          [data-mml-node="merror"] > rect[data-background] { fill: yellow; stroke: none; }
-          [data-frame], [data-line] { stroke-width: 70px; fill: none; }
-          .mjx-dashed { stroke-dasharray: 140; }
-          .mjx-dotted { stroke-linecap: round; stroke-dasharray: 0, 140; }
-          use[data-c] { stroke-width: 3px; }
-        `;
-        const node = html.convert(this.innerHTML, {display: this.attributes.display});
-        let output = adaptor.outerHTML(node);
-        output = output.replace(/<defs>/, '<defs><style>' + CSS + '</style>');
-        output += '<style>' + adaptor.textContent(svg.styleSheet(html)) + '</style>';
-        const shadow = this.attachShadow({ mode: "closed" });
-        shadow.innerHTML = output;
-      }
-    });
-  </script>
-  <script type="module">
-    customElements.define("x-abbr", class extends HTMLElement {
-      constructor() {
-        super();
-        const abbr = this.getAttribute("abbr") ?? this.innerHTML.replace(/[^A-Z]/g, "");
-        const title= this.innerHTML.trim();
-        const shadow = this.attachShadow({ mode: "closed" });
-        shadow.innerHTML = `<abbr title="${title}">${abbr}</abbr>`;
-      }
-    });
-  </script>
-  <script type="module">
-    customElements.define("x-code", class extends HTMLElement {
-      async connectedCallback() {
-        const { codeToHtml } = await import("https://esm.sh/shiki@1.0.0-beta.5");
-        const shadow = this.attachShadow({ mode: "closed" });
-        shadow.innerHTML = await codeToHtml(this.innerHTML, {
-          theme: this.getAttribute("theme") ?? "vitesse-light",
-          lang: this.getAttribute("lang") ?? "text",
-        });
-      }
-    });
-  </script>
+  <script type="module" src="./elements.js"></script>
   <script type="module">
     import Alpine from "https://esm.sh/alpinejs@3";
     import * as TOML from "https://esm.sh/smol-toml@1";
     const response = await fetch("./publications.toml");
     const text = await response.text();
     const { publications } = TOML.parse(text);
-    publications.sort((a, b) => ((b.year - a.year) || (b.month ?? 0) - (a.month ?? 0)));    
+    publications.sort((a, b) => ((b.year - a.year) || (b.month ?? 0) - (a.month ?? 0)));
     Alpine.data("app", () => ({ publications }));
     Alpine.start();
   </script>
@@ -272,8 +206,7 @@
             outstanding and highly motivated students pursuing a doctoral
             degree and develop their ability to conduct research as young
             researchers by engaging in research activities. The DRF program is
-            open for applications as follows. Students who would like to apply
-            should follow the procedures below.
+            open for applications as follows. 
           </p>
         </blockquote>
       </li>
@@ -303,6 +236,15 @@
       <li>
         RIKEN Special Postdoctoral Research Fellow (Natural Language
         Understanding Unit), RIKEN, April. 2023
+        <blockquote>
+          <p>
+            There is a pressing need to make the most of creative and basic research potential if we are to pioneer new frontiers
+            in science and technology on a global scale. And for this our greatest hope lies with the work of talented and
+            free-thinking young scientists. RIKEN's program for Special Postdoctoral Researchers (SPDR) was instituted to provide
+            young and creative scientists the opportunity to be involved in autonomous and independent research that is in line
+            with RIKEN objectives and research fields.
+          </p>
+        </blockquote>
       </li>
     </ul>
     <h2>Research Grant and Research Budget</h2>
@@ -389,48 +331,6 @@
       license to me. GitHub provides
       <a href="https://github.com/features/copilot">GitHub Copilot</a> to me.
     </p>
-    <h2>News</h2>
-    <ul>
-      <li>
-        [September, 2023] I participated in the Summer School of Foundations
-        of Mathematics, in Tokyo.
-      </li>
-      <li>
-        [September, 2023] I gave a talk about “Computational Complexity of
-        Combinatory Cateogiral Grammar” at 若手による数理論理研究集会
-        (Symposium of Young Researchers for Mathematical Logic).
-      </li>
-      <li>
-        [Semtember, 2023] We (Kosuke Matsuzaki, Masaya Taniguchi, Keisuke
-        Sakaguchi, and Kentaro Inui) gave a poster presentation at YANS2023
-        titled “日本語学習のための形態意味中心の動詞活用” and received the
-        Helpfeel Award.
-      </li>
-      <li>
-        [August, 2023] I participated in the Europian Summar School of Logic
-        and Language, Information, in Ljubljana.
-      </li>
-      <li>
-        [July, 2023] I visited the Computational Logic Group at the Institute
-        of Discrete Mathematics and Geometry of TU Wien, from July 18th to
-        July 29th. On the 26th, I presented a talk titled “Bridging the Gap:
-        Combinatorial Categorical Grammars and Proof Theory.”
-      </li>
-      <li>
-        [April, 2023] I presented a talk titled “Proof Theoretic Linguistics”
-        at the Sendai Logic Group, Mathematics Faculty, Tohoku University,
-        Science Department on April 28th.
-      </li>
-      <li>
-        [April, 2023] I joined the Natural Understanding Team as a Special
-        Postdoctoral Researcher for RIKEN AIP.
-      </li>
-      <li>
-        [March, 2023] I received my PhD (Information Science) from Japan
-        Advanced Institute of Science and Technology (JAIST).
-      </li>
-    </ul>
   </main>
 </body>
-
 </html>
