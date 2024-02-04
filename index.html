@@ -111,14 +111,7 @@
       <li>Proof Theory of Substructural Logic</li>
       <li>Theorem Proving (Isabelle/ HOL)</li>
     </ul>
-    <h2>Supervisor</h2>
-    <ul>
-      <li>Shinobu Hosono (Mathematics, Gakushuin University)</li>
-      <li>
-        Satoshi Tojo (Information Science,
-        <x-abbr>Japan Advanced Institute of Science and Technology</x-abbr>)
-      </li>
-    </ul>
+
     <h2>Publications and Talks</h2>
     <ol reversed x-data="app">
       <template x-for="pub in publications">
@@ -131,16 +124,14 @@
           </template>
           <span x-text="pub.year"></span>.<span x-text="pub.month"></span>,
           <span x-text="pub.venue"></span>
-          <span inline-block bg="gray-200" rounded="full" p="x-2 y-1" text="xs" font="bold" m="r-3" x-text="pub.type"></span>
+          <span inline-block bg="gray-200" rounded="full" p="x-2 y-1" text="xs" font="bold" m="l-3" x-text="pub.type"></span>
           <template x-if="pub.refereed">
-            <span inline-block  bg="gray-200" rounded="full" p="x-2 y-1" text="xs" font="bold" m="r-3">refereed</span>
+            <span inline-block  bg="gray-200" rounded="full" p="x-2 y-1" text="xs" font="bold" m="l-3">refereed</span>
           </template>
           <template x-if="pub.abstract">
             <span x-data="{ open: false }">
-              <span>
-              <span inline-block bg="emerald-200" cursor="pointer" rounded="full" p="x-2 y-1" text="xs" font="bold" m="r-3" x-on:click="open = !open">
+              <span inline-block bg="emerald-200" cursor="pointer" rounded="full" p="x-2 y-1" text="xs" font="bold" m="l-3" x-on:click="open = !open">
                 Abstract is available
-              </span>
               </span>
               <div bg="gray-100" rounded="md" p="x-2 y-1" m="t-2" x-show="open" x-text="pub.abstract"></div>
             </span>
@@ -214,6 +205,14 @@
       <li>
         Doctor of Science in Information Science, <x-abbr>Japan Advanced Institute of Science and Technology</x-abbr>,
         2023
+      </li>
+    </ul>
+    <h2>Supervisor</h2>
+    <ul>
+      <li>Shinobu Hosono (Mathematics, Gakushuin University)</li>
+      <li>
+        Satoshi Tojo (Information Science,
+        <x-abbr>Japan Advanced Institute of Science and Technology</x-abbr>)
       </li>
     </ul>
     <h2>Social Contribution Activities</h2>
