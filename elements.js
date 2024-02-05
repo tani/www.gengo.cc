@@ -1,27 +1,19 @@
-customElements.define("x-math", class extends HTMLElement {
+customElements.define("x-math", class extends HTMLElement {    
     async connectedCallback() {
-        const { default: build } = await import("https://esm.sh/build");
-        const mod = await build({
-            dependencies: {
-                "mathjax-full": "^3.2.2"
-            },
-            code: `
-                export {TeX} from "npm:mathjax-full/js/input/tex.js";
-                export {SVG} from "npm:mathjax-full/js/output/svg.js";
-                export {browserAdaptor} from "npm:mathjax-full/js/adaptors/browserAdaptor.js";
-                export {RegisterHTMLHandler} from "npm:mathjax-full/js/handlers/html.js";
-                export {AssistiveMmlHandler} from "npm:mathjax-full/js/a11y/assistive-mml.js";
-                export {AllPackages} from "npm:mathjax-full/js/input/tex/AllPackages.js";
-                export {mathjax} from "npm:mathjax-full/js/mathjax.js";
-            `
-        });
-        const MathJax = await import(mod.bundleUrl);
-        const tex = new MathJax.TeX({ packages: MathJax.AllPackages });
-        const svg = new MathJax.SVG({ fontCache: "local" });
-        const adaptor = MathJax.browserAdaptor();
-        const handler = MathJax.RegisterHTMLHandler(adaptor);
-        MathJax.AssistiveMmlHandler(handler);
-        const html = MathJax.mathjax.document(document, { InputJax: tex, OutputJax: svg });
+        const MathJaxRoot = 'https://jspm.dev/mathjax-full@3';
+        const {TeX} = await import(`${MathJaxRoot}/js/input/tex.js`);
+        const {SVG} = await import(`${MathJaxRoot}/js/output/svg.js`);
+        const {browserAdaptor} = await import(`${MathJaxRoot}/js/adaptors/browserAdaptor.js`);
+        const {RegisterHTMLHandler} = await import(`${MathJaxRoot}/js/handlers/html.js`);
+        const {AssistiveMmlHandler} = await import(`${MathJaxRoot}/js/a11y/assistive-mml.js`);
+        const {AllPackages} = await import(`${MathJaxRoot}/js/input/tex/AllPackages.js`);
+        const {mathjax} = await import(`${MathJaxRoot}/js/mathjax.js`);
+        const tex = new TeX({ packages: AllPackages });
+        const svg = new SVG({ fontCache: "local" });
+        const adaptor = browserAdaptor();
+        const handler = RegisterHTMLHandler(adaptor);
+        AssistiveMmlHandler(handler);
+        const html = mathjax.document(document, { InputJax: tex, OutputJax: svg });
         const CSS = `
             svg a { fill: blue; stroke: blue; }
             [data-mml-node="merror"] > g { fill: red; stroke: red; }
@@ -31,12 +23,10 @@ customElements.define("x-math", class extends HTMLElement {
             .mjx-dotted { stroke-linecap: round; stroke-dasharray: 0, 140; }
             use[data-c] { stroke-width: 3px; }
         `;
-        const node = html.convert(this.innerHTML, { display: this.attributes.display });
-        let output = adaptor.outerHTML(node);
-        output = output.replace(/<defs>/, '<defs><style>' + CSS + '</style>');
-        output += '<style>' + adaptor.textContent(svg.styleSheet(html)) + '</style>';
         const shadow = this.attachShadow({ mode: "closed" });
-        shadow.innerHTML = output;
+        shadow.appendChild(html.convert(this.innerHTML, { display: this.attributes.display }));
+        shadow.appendChild(svg.styleSheet(html));
+        shadow.innerHTML += `<style>${CSS}</style>`;
     }
 });
 customElements.define("x-abbr", class extends HTMLElement {
