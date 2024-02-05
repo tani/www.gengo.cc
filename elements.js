@@ -1,13 +1,12 @@
-customElements.define("x-math", class extends HTMLElement {    
+customElements.define("x-math", class extends HTMLElement {
     async connectedCallback() {
-        const MathJaxRoot = 'https://jspm.dev/mathjax-full@3';
-        const {TeX} = await import(`${MathJaxRoot}/js/input/tex.js`);
-        const {SVG} = await import(`${MathJaxRoot}/js/output/svg.js`);
-        const {browserAdaptor} = await import(`${MathJaxRoot}/js/adaptors/browserAdaptor.js`);
-        const {RegisterHTMLHandler} = await import(`${MathJaxRoot}/js/handlers/html.js`);
-        const {AssistiveMmlHandler} = await import(`${MathJaxRoot}/js/a11y/assistive-mml.js`);
-        const {AllPackages} = await import(`${MathJaxRoot}/js/input/tex/AllPackages.js`);
-        const {mathjax} = await import(`${MathJaxRoot}/js/mathjax.js`);
+        const { TeX } = await import("mathjax-full/js/input/tex.js");
+        const { SVG } = await import("mathjax-full/js/output/svg.js");
+        const { browserAdaptor } = await import("mathjax-full/js/adaptors/browserAdaptor.js");
+        const { RegisterHTMLHandler } = await import("mathjax-full/js/handlers/html.js");
+        const { AssistiveMmlHandler } = await import("mathjax-full/js/a11y/assistive-mml.js");
+        const { AllPackages } = await import("mathjax-full/js/input/tex/AllPackages.js");
+        const { mathjax } = await import("mathjax-full/js/mathjax.js");
         const tex = new TeX({ packages: AllPackages });
         const svg = new SVG({ fontCache: "local" });
         const adaptor = browserAdaptor();
