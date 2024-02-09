@@ -47,19 +47,20 @@
     });
   </script>
 </head>
-<body p="sm:x-0 x-5" m="0">
+<body p="sm:x-0 x-5" m="0" font="sans" box-border>
   <header m="x-auto" style="width: calc(16rem + 65ch);">
-    <h1 font="sans" bg="dark-900" text="white" inline-block p="x-2" m="y-0">GENGO.CC</h1>
+    <h1 font="sans" bg="dark-900" text="white" inline-block p="x-2" m="y-0">GENGO.CC</h1><br>
+    <div p="x-2">
+      <a href="#">HOME</a> /
+      <a href="https://github.com/tani">CODE</a> /
+      <a href="https://www.nlp.ecei.tohoku.ac.jp/">LAB</a>
+    </div>
+    <hr border="gray-200">
   </header>
-  <main font="sans" m="x-auto y-2" flex size="fit" relative>
-    <aside w-64 sm:block hidden></aside>
+  <main m="x-auto y-2" flex size="fit" relative>
+    <aside w="64" sm:block hidden></aside>
     <article text="sm:justify" p="x-2" prose="~ stone">
-      <h1 text="center">Profile</h1>
-      <div text="center">
-        Masaya Taniguchi<br />
-        RIKEN Center of <x-abbr>Advanced Intelligence Project</x-abbr><br />
-        <code>&lt;first name&gt;.&lt;last name&gt;@riken.jp</code>
-      </div>
+      <h1>Profile</h1>
       <p>
         Masaya Taniguchi is a researcher position in
         <x-abbr>Natural Language Understanding</x-abbr> team at RIKEN
