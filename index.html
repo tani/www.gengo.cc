@@ -6,8 +6,40 @@
   <meta name="author" content="Masaya Taniguchi" />
   <meta name="description" content="Masaya Taniguchi's profile" />
   <title>Masaya Taniguchi</title>
+  
+  <script src="https://raw.esm.sh/@unocss/runtime@0.58.5/preset-uno.global.js"></script>
+  <script src="https://raw.esm.sh/@unocss/runtime@0.58.5/preset-attributify.global.js"></script>
+  <script src="https://raw.esm.sh/@unocss/runtime@0.58.5/preset-typography.global.js"></script>
+  <script src="https://raw.esm.sh/@unocss/runtime@0.58.5/preset-web-fonts.global.js"></script>
+  <script>
+    window.__unocss = {
+      presets: [
+        () => window.__unocss_runtime.presets.presetUno(),
+        () => window.__unocss_runtime.presets.presetAttributify(),
+        () => window.__unocss_runtime.presets.presetTypography(),
+        () => window.__unocss_runtime.presets.presetWebFonts({
+          provider: 'bunny',
+          inlineImports: false,
+          fonts: {
+            sans: [{
+              name: 'Open Sans',
+              weights: ['300', '400', '500', '600', '700', '800'],
+              italic: true,
+            }, {
+              name: 'Zen Kaku Gothic New',
+              weights: ['300', '400', '500', '700', '900']
+            }],
+            mono: [{
+              name: 'M PLUS 1 Code:100..700',
+              weights: ['100', '200', '300', '400', '500', '600', '700'],
+            }]
+          }
+        }),
+      ],
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime@0.58.5/core.global.js"></script>
   <link rel="icon" href="https://raw.esm.sh/@twemoji/svg@15/1f363.svg" />
-  <script async src="https://raw.esm.sh/@unocss/runtime@0.58.4/full.global.js"></script>
   <script type="importmap">
     {
       "imports": {
