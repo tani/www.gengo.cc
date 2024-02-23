@@ -74,7 +74,7 @@
       contentSelector: 'article',
       headingSelector: 'h2, h3, h4, h5',
       hasInnerContainers: true,
-      listClass: "sticky top-0 toc-list"
+      listClass: "toc-list"
     });
   </script>
 </head>
@@ -88,8 +88,11 @@
     </div>
     <hr border="gray-200">
   </header>
-  <main m="x-auto y-2" flex size="fit" relative>
-    <aside w="64" sm:block hidden></aside>
+  <main m="x-auto y-2" flex size="fit">
+    <div  w="64" sm:block hidden relative>
+      <img w="48" block m="x-auto" src="./portfolio_square_watercolor.jpg" />
+      <aside sticky top="0"></aside>
+    </div>
     <article text="sm:justify" p="x-2" prose="~ stone">
       <h1>Profile</h1>
       <p>
