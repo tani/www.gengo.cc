@@ -4,7 +4,8 @@ import { PhpNode } from "npm:php-wasm@0.0.8/PhpNode.mjs";
 
 const app = new Hono();
 
-app.use('/static/*', serveStatic({ root: './src/static/' }));
+app.get('/', (c) => c.redirect('/index.php'));
+app.get('/static/*', serveStatic({ root: './src' }));
 app.get('/:filename{.+\\.php$}', async (context) => {
   const filename = context.req.param('filename');
   let body = "";

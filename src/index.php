@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
   <?php 
-    $title = "Masaya Taniguchi"
-    phpwasm_include("head.php") 
+    $title = "Masaya Taniguchi";
+    phpwasm_include("head.php");
   ?>
+  <script type="module">
+  import Alpine from "alpinejs";
+  import * as TOML from "smol-toml";
+  const response = await fetch("/static/publications.toml");
+  const text = await response.text();
+  const { publications } = TOML.parse(text);
+  publications.sort((a, b) => ((b.year - a.year) || (b.month ?? 0) - (a.month ?? 0)));
+  Alpine.data("app", () => ({ publications }));
+  Alpine.start();
+  </script>
 </head>
 <body p="sm:x-0 x-5" m="0" font="sans" box-border>
   <header m="x-auto" w="[calc(16rem+65ch)]">
