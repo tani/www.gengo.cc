@@ -3,7 +3,7 @@
 <head>
   <?php 
     $title = "Masaya Taniguchi";
-    phpwasm_include("head.php");
+    include 'head.php';
   ?>
   <script type="module">
   import Alpine from "alpinejs";

@@ -17,7 +17,9 @@ app.get('/:filename{.+\\.php$}', async (context) => {
     <?php
     function phpwasm_include($file) {
       $window = new Vrzno;
-      eval('?>'.$window->Deno->readTextFileSync('./src/'.$file));
+      $content = $window->Deno->readTextFileSync('./src/'.$file);
+      $content = preg_replace('/include\\s*("[^"]*"|\\'[^\\']*\\'|(\\((?:[^()]++|(?2))*\\)))/', 'phpwasm_include($1)', $content);
+      eval('?>'.$content);
     }
     phpwasm_include('${filename}');
   `);
