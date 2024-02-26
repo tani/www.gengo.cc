@@ -1,82 +1,10 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="author" content="Masaya Taniguchi" />
-  <meta name="description" content="Masaya Taniguchi's profile" />
-  <title>Masaya Taniguchi</title>
-  <link rel="icon" href="https://cdn.jsdelivr.net/npm/@twemoji/svg@15/1f363.svg" />
-  <script type="importmap">
-    {
-      "imports": {
-        "@unocss/runtime/": "https://cdn.jsdelivr.net/npm/@unocss/runtime@0.58.5/",
-        "mathjax-full/": "https://ga.jspm.io/npm:mathjax-full@3.2.2/",
-        "mhchemparser/": "https://ga.jspm.io/npm:mhchemparser@4.2.1/",
-        "shiki": "https://ga.jspm.io/npm:shiki@1.1.13/dist/index.mjs",
-        "alpinejs": "https://ga.jspm.io/npm:alpinejs@3.13.5/dist/module.esm.js",
-        "smol-toml": "https://ga.jspm.io/npm:smol-toml@1.1.4/dist/index.js",
-        "slugify": "https://ga.jspm.io/npm:slugify@1.6.6/slugify.js",
-        "tocbot": "https://ga.jspm.io/npm:tocbot@4.25.0/src/js/index.js"
-      }
-    }
-  </script>
-  <script type="module">
-    import "@unocss/runtime/preset-uno.global.js";
-    import "@unocss/runtime/preset-attributify.global.js";
-    import "@unocss/runtime/preset-typography.global.js";
-    import "@unocss/runtime/preset-web-fonts.global.js";
-    window.__unocss = {
-      presets: [
-        () => window.__unocss_runtime.presets.presetUno(),
-        () => window.__unocss_runtime.presets.presetAttributify(),
-        () => window.__unocss_runtime.presets.presetTypography(),
-        () => window.__unocss_runtime.presets.presetWebFonts({
-          provider: 'bunny',
-          inlineImports: false,
-          fonts: {
-            sans: [{
-              name: 'Hind',
-              weights: ['300', '400', '500', '600', '700']
-            }, {
-              name: 'Zen Kaku Gothic New',
-              weights: ['300', '400', '500', '700', '900']
-            }],
-            mono: [{
-              name: 'M PLUS 1 Code',
-              weights: ['100', '200', '300', '400', '500', '600', '700'],
-            }]
-          }
-        }),
-      ],
-    }
-    import("@unocss/runtime/core.global.js");
-  </script>
-  <script type="module" src="./elements.js"></script>
-  <script type="module">
-    import Alpine from "alpinejs";
-    import * as TOML from "smol-toml";
-    const response = await fetch("./publications.toml");
-    const text = await response.text();
-    const { publications } = TOML.parse(text);
-    publications.sort((a, b) => ((b.year - a.year) || (b.month ?? 0) - (a.month ?? 0)));
-    Alpine.data("app", () => ({ publications }));
-    Alpine.start();
-  </script>
-  <script type="module">
-    import slugify from "slugify";
-    import tocbot from "tocbot";
-    document.querySelectorAll("article :is(h2, h3, h4, h5)").forEach((e) => {
-      e.id = slugify(e.textContent)
-    });
-    tocbot.init({
-      tocSelector: 'aside',
-      contentSelector: 'article',
-      headingSelector: 'h2, h3, h4, h5',
-      hasInnerContainers: true,
-      listClass: "toc-list"
-    });
-  </script>
+  <?php 
+    $title = "Masaya Taniguchi"
+    phpwasm_include("head.php") 
+  ?>
 </head>
 <body p="sm:x-0 x-5" m="0" font="sans" box-border>
   <header m="x-auto" w="[calc(16rem+65ch)]">
@@ -90,7 +18,7 @@
   </header>
   <main m="x-auto y-2" flex size="fit">
     <div  w="64" sm:block hidden relative>
-      <img w="48" block m="x-auto" src="./portfolio_square_watercolor.jpg" />
+      <img w="48" block m="x-auto" src="/static/portfolio_square_watercolor.jpg" />
       <aside sticky top="0"></aside>
     </div>
     <article text="sm:justify" p="x-2" prose="~ stone">

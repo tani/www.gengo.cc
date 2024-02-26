@@ -1,0 +1,12 @@
+{
+    "imports": {
+        "@unocss/runtime/": "https://cdn.jsdelivr.net/npm/@unocss/runtime@0.58.5/",
+        "mathjax-full/": "https://ga.jspm.io/npm:mathjax-full@3.2.2/",
+        "mhchemparser/": "https://ga.jspm.io/npm:mhchemparser@4.2.1/",
+        "shiki": "https://ga.jspm.io/npm:shiki@1.1.13/dist/index.mjs",
+        "alpinejs": "https://ga.jspm.io/npm:alpinejs@3.13.5/dist/module.esm.js",
+        "smol-toml": "https://ga.jspm.io/npm:smol-toml@1.1.4/dist/index.js",
+        "slugify": "https://ga.jspm.io/npm:slugify@1.6.6/slugify.js",
+        "tocbot": "https://ga.jspm.io/npm:tocbot@4.25.0/src/js/index.js"
+    }
+}
