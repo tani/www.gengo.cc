@@ -51,7 +51,7 @@
         <li>Theorem Proving (Isabelle/ HOL)</li>
       </ul>
       <h2>Publications and Talks</h2>
-      <ol reversed x-data="app">
+      <ol reversed>
         <?php foreach ($publications as $pub) { ?>
         <li>
           <?= $pub->authors->join(', ') ?>,
