@@ -8,3 +8,6 @@
 <script type="module"><?php include 'unocss.js' ?></script>
 <script type="module"><?php include 'elements.js' ?></script>
 <script type="module"><?php include 'tocbot.js' ?></script>
+<style>
+  [un-cloak] { display: none; }
+</style>

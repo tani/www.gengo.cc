@@ -4,17 +4,13 @@
   <?php 
     $title = "Masaya Taniguchi";
     include 'head.php';
-    $TOML = vrzno_env('TOML');
-    $Deno = (new Vrzno)->Deno;
-    $publications = $TOML->parse($Deno->readTextFileSync('./src/static/publications.toml'))->publications;
   ?>
   <script type="module">
   import Alpine from "alpinejs";
-  //publications.sort((a, b) => ((b.year - a.year) || (b.month ?? 0) - (a.month ?? 0)));
   Alpine.start();
   </script>
 </head>
-<body p="sm:x-0 x-5" m="0" font="sans" box-border>
+<body p="sm:x-0 x-5" m="0" font="sans" box-border un-cloak>
   <header m="x-auto" w="[calc(16rem+65ch)]">
     <h1 font="sans" bg="dark-900" text="white" inline-block p="x-2" m="y-0">GENGO.CC</h1><br>
     <div p="x-2">
@@ -52,31 +48,45 @@
       </ul>
       <h2>Publications and Talks</h2>
       <ol reversed>
+        <?php
+          $TOML = vrzno_env('TOML');
+          $Deno = (new Vrzno)->Deno;
+          $JSON = (new Vrzno)->JSON;
+          $publications = $TOML->parse($Deno->readTextFileSync('./src/static/publications.toml'))->publications;
+          $publications = json_decode(strval($JSON->stringify($publications)), true);
+          usort($publications, function($a, $b) {
+            if ($a['year'] === $b['year'] && (isset($a['month']) && isset($b['month']))) {
+              return $a['month'] <=> $b['month'];
+            }
+            return $a['year'] <=> $b['year'];
+          });
+          $publications = array_reverse($publications);
+        ?>
         <?php foreach ($publications as $pub) { ?>
         <li>
-          <?= $pub->authors->join(', ') ?>,
-          <?= $pub->title ?>,
-          <?= $pub->conference ?? $pub->event ?? $pub->journal ?>,
-          <?php if (isset($pub->organization)) { ?>
-            <?= $pub->organization ?>,
+          <?= join(', ', $pub['authors']) ?>,
+          <?= $pub['title'] ?>,
+          <?= $pub['conference'] ?? $pub['event'] ?? $pub['journal'] ?>,
+          <?php if (isset($pub['organization'])) { ?>
+            <?= $pub['organization'] ?>,
           <?php } ?>
-          <?= $pub->year ?>.<?= $pub->month ?>,
-          <?= $pub->venue ?>
+          <?= $pub['year'] ?>.<?= $pub['month'] ?>,
+          <?= $pub['venue'] ?>.
           <span inline-block bg="gray-200" rounded="full" p="x-2 y-1" text="xs" font="bold" m="l-3">
-            <?= $pub->type ?>
+            <?= $pub['type'] ?>
           </span>
-          <?php if ($pub->refereed) { ?>
+          <?php if (isset($pub['refereed']) && $pub['refereed']) { ?>
             <span inline-block  bg="gray-200" rounded="full" p="x-2 y-1" text="xs" font="bold" m="l-3">
               refereed
             </span>
           <?php } ?>
-          <?php if (isset($pub->abstract)) { ?>
+          <?php if (isset($pub['abstract'])) { ?>
             <span x-data="{ open: false }">
               <span inline-block bg="emerald-200" cursor="pointer" rounded="full" p="x-2 y-1" text="xs" font="bold" m="l-3" x-on:click="open = !open">
                 abstract is available
               </span>
               <div bg="gray-100" rounded="md" p="x-2 y-1" m="t-2" x-show="open">
-                <?= $pub->abstract ?>
+                <?= $pub['abstract'] ?>
               </div>
             </span>
           <?php } ?>
