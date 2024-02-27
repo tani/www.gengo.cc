@@ -4,15 +4,13 @@
   <?php 
     $title = "Masaya Taniguchi";
     include 'head.php';
+    $TOML = vrzno_env('TOML');
+    $Deno = (new Vrzno)->Deno;
+    $publications = $TOML->parse($Deno->readTextFileSync('./src/static/publications.toml'))->publications;
   ?>
   <script type="module">
   import Alpine from "alpinejs";
-  import * as TOML from "smol-toml";
-  const response = await fetch("/static/publications.toml");
-  const text = await response.text();
-  const { publications } = TOML.parse(text);
-  publications.sort((a, b) => ((b.year - a.year) || (b.month ?? 0) - (a.month ?? 0)));
-  Alpine.data("app", () => ({ publications }));
+  //publications.sort((a, b) => ((b.year - a.year) || (b.month ?? 0) - (a.month ?? 0)));
   Alpine.start();
   </script>
 </head>
@@ -54,30 +52,36 @@
       </ul>
       <h2>Publications and Talks</h2>
       <ol reversed x-data="app">
-        <template x-for="pub in publications">
-          <li>
-            <span x-text="pub.authors.join(', ')"></span>,
-            <span x-text="pub.title"></span>,
-            <span x-text="pub.conference || pub.event || pub.journal"></span>,
-            <template x-if="pub.organization">
-              <span x-text="pub.organization"></span>,
-            </template>
-            <span x-text="pub.year"></span>.<span x-text="pub.month"></span>,
-            <span x-text="pub.venue"></span>
-            <span inline-block bg="gray-200" rounded="full" p="x-2 y-1" text="xs" font="bold" m="l-3" x-text="pub.type"></span>
-            <template x-if="pub.refereed">
-              <span inline-block  bg="gray-200" rounded="full" p="x-2 y-1" text="xs" font="bold" m="l-3">refereed</span>
-            </template>
-            <template x-if="pub.abstract">
-              <span x-data="{ open: false }">
-                <span inline-block bg="emerald-200" cursor="pointer" rounded="full" p="x-2 y-1" text="xs" font="bold" m="l-3" x-on:click="open = !open">
-                  Abstract is available
-                </span>
-                <div bg="gray-100" rounded="md" p="x-2 y-1" m="t-2" x-show="open" x-text="pub.abstract"></div>
+        <?php foreach ($publications as $pub) { ?>
+        <li>
+          <?= $pub->authors->join(', ') ?>,
+          <?= $pub->title ?>,
+          <?= $pub->conference ?? $pub->event ?? $pub->journal ?>,
+          <?php if (isset($pub->organization)) { ?>
+            <?= $pub->organization ?>,
+          <?php } ?>
+          <?= $pub->year ?>.<?= $pub->month ?>,
+          <?= $pub->venue ?>
+          <span inline-block bg="gray-200" rounded="full" p="x-2 y-1" text="xs" font="bold" m="l-3">
+            <?= $pub->type ?>
+          </span>
+          <?php if ($pub->refereed) { ?>
+            <span inline-block  bg="gray-200" rounded="full" p="x-2 y-1" text="xs" font="bold" m="l-3">
+              refereed
+            </span>
+          <?php } ?>
+          <?php if (isset($pub->abstract)) { ?>
+            <span x-data="{ open: false }">
+              <span inline-block bg="emerald-200" cursor="pointer" rounded="full" p="x-2 y-1" text="xs" font="bold" m="l-3" x-on:click="open = !open">
+                abstract is available
               </span>
-            </template>
-          </li>
-        </template>
+              <div bg="gray-100" rounded="md" p="x-2 y-1" m="t-2" x-show="open">
+                <?= $pub->abstract ?>
+              </div>
+            </span>
+          <?php } ?>
+        </li>
+        <?php } ?>
       </ol>
       <h2>Academic work</h2>
       <ul>
