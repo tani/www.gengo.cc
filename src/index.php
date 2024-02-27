@@ -71,7 +71,9 @@
             <?= $pub['organization'] ?>,
           <?php } ?>
           <?= $pub['year'] ?>.<?= $pub['month'] ?>,
-          <?= $pub['venue'] ?>.
+          <?php if (isset($pub['venue'])) { ?>
+            <?= $pub['venue'] ?>
+          <?php } ?>
           <span inline-block bg="gray-200" rounded="full" p="x-2 y-1" text="xs" font="bold" m="l-3">
             <?= $pub['type'] ?>
           </span>
