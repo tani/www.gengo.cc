@@ -282,7 +282,12 @@
         </li>
         <li>
           Research Budget for Special Postdoctoral Researcher (1,500,000 JPY in
-          2022), RIKEN, April. 2023 — March. 2024
+          2022), RIKEN, April. 2023 — March. 2026
+        </li>
+        <li>
+          <a href="#">A computational analysis of human language functions: bridging grammaticality judgments and categorical grammar</a>
+          Grant-in-Aid for <x-abbr>Japan Society for the Promotion of
+          Science</x-abbr> (3,700,000 JPY in total), RIKEN, April. 2024 — March. 2029
         </li>
       </ul>
       <h2>Awards</h2>
