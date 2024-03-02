@@ -5,10 +5,6 @@
     $title = "Masaya Taniguchi";
     include 'head.php';
   ?>
-  <script type="module">
-  import Alpine from "alpinejs";
-  Alpine.start();
-  </script>
 </head>
 <body p="sm:x-0 x-5" m="0" font="sans" box-border un-cloak>
   <header m="x-auto" md:w="[calc(16rem+65ch)]">
@@ -83,11 +79,12 @@
             </span>
           <?php } ?>
           <?php if (isset($pub['abstract'])) { ?>
-            <span x-data="{ open: false }">
-              <span inline-block bg="emerald-200" cursor="pointer" rounded="full" p="x-2 y-1" text="xs" font="bold" m="l-3" x-on:click="open = !open">
+            <span>
+              <label class="abst-btn" inline-block bg="emerald-200" cursor="pointer" rounded="full" p="x-2 y-1" text="xs" font="bold" m="l-3">
+                <input type="checkbox" hidden>
                 abstract is available
-              </span>
-              <div bg="gray-100" rounded="md" p="x-2 y-1" m="t-2" x-show="open">
+              </label>
+              <div bg="gray-100" rounded="md" p="x-2 y-1" m="t-2">
                 <?= $pub['abstract'] ?>
               </div>
             </span>
