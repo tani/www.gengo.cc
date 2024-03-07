@@ -12,15 +12,12 @@ window.__unocss = {
         inlineImports: false,
         fonts: {
         sans: [{
-            name: 'Hind',
-            weights: ['300', '400', '500', '600', '700']
-        }, {
-            name: 'Zen Kaku Gothic New',
-            weights: ['300', '400', '500', '700', '900']
+            name: 'M PLUS 2',
+            weights: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
         }],
         mono: [{
             name: 'M PLUS 1 Code',
-            weights: ['100', '200', '300', '400', '500', '600', '700'],
+            weights: ['100', '200', '300', '400', '500', '600', '700']
         }]
         }
     }),
