@@ -1,4 +1,13 @@
 [[publications]]
+type = "Domestic Conference"
+title = "Mathematics in Context Sensitive Language"
+authors = [ "Masaya Taniguchi" ]
+conference = "AIP Math retreat"
+year = 2024
+month = 2
+venue = "Kanagawa, Japan"
+
+[[publications]]
 type = "Talk"
 title = "Lambek Calculus for Context-sensitive Language"
 authors = ["Masaya Taniguchi"]
