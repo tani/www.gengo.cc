@@ -1,5 +1,14 @@
 [[publications]]
 type = "Domestic Conference"
+title = "Mathematical Logic Approach for Incremental Parsing"
+authors = [ "Masaya Taniguchi" ]
+conference = "AIP Retreat"
+year = 2024
+month = 3
+venue = "Tokyo, Japan"
+
+[[publications]]
+type = "Domestic Conference"
 title = "Mathematics in Context Sensitive Language"
 authors = [ "Masaya Taniguchi" ]
 conference = "AIP Math retreat"
