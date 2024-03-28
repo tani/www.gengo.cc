@@ -282,9 +282,14 @@
           2022), RIKEN, April. 2023 — March. 2026
         </li>
         <li>
-          <a href="#">A computational analysis of human language functions: bridging grammaticality judgments and categorical grammar</a>
+          <a href="#">Computational analysis of human language functions: bridging grammaticality judgments and categorical grammar</a>
           Grant-in-Aid for <x-abbr>Japan Society for the Promotion of
-          Science</x-abbr> (3,700,000 JPY in total), RIKEN, April. 2024 — March. 2029
+          Science</x-abbr> (3,700,000 JPY in total), <x-abbr>Japan Society for the Promotion of
+            Science</x-abbr>, April. 2024 — March. 2029
+        </li>
+        <li>
+          <a href="#">CCG/SMT: Higher Order Algorithm for Tree Structure</a>
+           Incentive Research Projects in FY2024 (3,000,000 JPY in total), RIKEN, April. 2024 — March. 2026
         </li>
       </ul>
       <h2>Awards</h2>
