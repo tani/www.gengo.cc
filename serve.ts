@@ -11,14 +11,15 @@ app.get('/:filename{.+\\.php$}', async (context) => {
   const filename = context.req.param('filename');
   let body = "";
   const write = ({detail}) => { body += detail;};
-  const php = new PhpNode({TOML});
+  const php = new PhpNode({TOML, readTextFile: Deno.readTextFile});
   php.addEventListener("output", write);
   php.addEventListener("error", write);
   await php.run(`
     <?php
     function phpwasm_include($file) {
       $window = new Vrzno;
-      $content = $window->Deno->readTextFileSync('./src/'.$file);
+      $readTextFile = vrzno_env('readTextFile');
+      $content = vrzno_await($readTextFile('./src/'.$file));
       $content = preg_replace('/include\\s*("[^"]*"|\\'[^\\']*\\'|(\\((?:[^()]++|(?2))*\\)))/', 'phpwasm_include($1)', $content);
       eval('?>'.$content);
     }
