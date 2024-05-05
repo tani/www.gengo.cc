@@ -45,10 +45,10 @@
       <h2>Publications and Talks</h2>
       <ol reversed>
         <?php
-          $TOML = vrzno_env('TOML');
+          $toml_decode = vrzno_env('toml_decode');
           $Deno = (new Vrzno)->Deno;
           $JSON = (new Vrzno)->JSON;
-          $publications = $TOML->parse($Deno->readTextFileSync('./src/static/publications.toml'))->publications;
+          $publications = $toml_decode($Deno->readTextFileSync('./src/static/publications.toml'))->publications;
           $publications = json_decode(strval($JSON->stringify($publications)), true);
           usort($publications, function($a, $b) {
             if ($a['year'] === $b['year'] && (isset($a['month']) && isset($b['month']))) {

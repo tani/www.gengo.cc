@@ -12,5 +12,5 @@
   [un-cloak] { display: none; }
   .abst-btn:has(:not(:checked)) + div {
       display: none;
-    }
+  }
 </style>
