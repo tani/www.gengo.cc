@@ -12,10 +12,13 @@ async function render(filename: string) {
     php.addEventListener("error", write);
     await php.run(`
       <?php
+      function phpwasm_file_get_contents($file) {
+        return vrzno_await(vrzno_env("io")->readFile('./src/'.$file, 'utf8'));
+      }
       function phpwasm_include($file) {
-        $io = vrzno_env('io');
-        $content = vrzno_await($io->readFile('./src/'.$file, 'utf8'));
+        $content = vrzno_await(vrzno_env("io")->readFile('./src/'.$file, 'utf8'));
         $content = preg_replace('/include\\s*("[^"]*"|\\'[^\\']*\\'|(\\((?:[^()]++|(?2))*\\)))/', 'phpwasm_include($1)', $content);
+        $content = preg_replace('/file_get_contents\\(([^()]*)\\)/', 'phpwasm_file_get_contents($1)', $content);
         eval('?>'.$content);
       }
       phpwasm_include('${filename}');

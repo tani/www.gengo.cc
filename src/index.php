@@ -46,10 +46,8 @@
       <ol reversed>
         <?php
           $toml_decode = vrzno_env('toml_decode');
-          $io = vrzno_env('io');
-          $window = new Vrzno;
-          $publications = $toml_decode(vrzno_await($io->readFile('./src/static/publications.toml', 'utf8')))->publications;
-          $publications = json_decode(strval($window->JSON->stringify($publications)), true);
+          $publications = $toml_decode(file_get_contents('static/publications.toml'))->publications;
+          $publications = json_decode(strval(json_encode($publications)), true);
           usort($publications, function($a, $b) {
             if ($a['year'] === $b['year'] && (isset($a['month']) && isset($b['month']))) {
               return $a['month'] <=> $b['month'];
