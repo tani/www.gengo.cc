@@ -2,6 +2,7 @@ import { Hono } from "https://deno.land/x/hono@v4.0.7/mod.ts";
 import { serveStatic } from "https://deno.land/x/hono/middleware.ts";
 import { PhpNode } from "npm:php-wasm@0.0.8/PhpNode.mjs";
 import * as TOML from "npm:smol-toml@1.1.4";
+import * as fs from "@cross/fs@0.0.11/io";
 
 const app = new Hono();
 
