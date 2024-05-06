@@ -6,6 +6,5 @@
 <link rel="icon" href="https://cdn.jsdelivr.net/npm/@twemoji/svg@15/1f363.svg" />
 <link rel="stylesheet" href="static/uno.css" />
 <script type="importmap"><?php include 'importmap.json' ?></script>
-<script type="module"><?php include 'unocss.js' ?></script>
 <script type="module"><?php include 'elements.js' ?></script>
 <script type="module"><?php include 'tocbot.js' ?></script>
