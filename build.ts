@@ -34,7 +34,7 @@ async function generate(infile: string) {
 }
 
 async function copy(infile: string) {
-    const outfile = infile.replace(/static\//,'dist/');
+    const outfile = infile.replace(/src\//,'dist/');
     await ops.mkdir(path.dirname(outfile), { recursive: true })
     await io.writeFile(outfile, await io.readFile(infile));
 }
