@@ -8,3 +8,8 @@
 <script type="importmap"><?php include 'importmap.json' ?></script>
 <script type="module"><?php include 'elements.js' ?></script>
 <script type="module"><?php include 'tocbot.js' ?></script>
+<style>
+  .abst-btn:has(:not(:checked)) + div {
+      display: none;
+  }
+</style>
