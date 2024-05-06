@@ -30,15 +30,18 @@ customElements.define("x-math", class extends HTMLElement {
 });
 customElements.define("x-abbr", class extends HTMLElement {
     connectedCallback() {
-        const abbr = this.getAttribute("abbr") ?? this.innerHTML.replace(/[^A-Z]/g, "");
-        const title = this.innerHTML.trim();
-        const shadow = this.attachShadow({ mode: "closed" });
-        shadow.innerHTML = `<abbr title="${title}">${abbr}</abbr>`;
+        // check if the device is a mobile
+        if (!globalThis.matchMedia("(max-width: 768px)").matches) {
+          const abbr = this.getAttribute("abbr") ?? this.innerHTML.replace(/[^A-Z]/g, "");
+          const title = this.innerHTML.trim();
+          const shadow = this.attachShadow({ mode: "closed" });
+          shadow.innerHTML = `<abbr title="${title}">${abbr}</abbr>`;
+        }
     }
 });
 customElements.define("x-code", class extends HTMLElement {
     async connectedCallback() {
-        const { codeToHtml } = await import("https://esm.sh/shiki@1.0.0-beta.5");
+        const { codeToHtml } = await import("shiki");
         const shadow = this.attachShadow({ mode: "closed" });
         shadow.innerHTML = await codeToHtml(this.innerHTML, {
             theme: this.getAttribute("theme") ?? "vitesse-light",
