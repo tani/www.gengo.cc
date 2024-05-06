@@ -280,7 +280,7 @@
           2022), RIKEN, April. 2023 — March. 2026
         </li>
         <li>
-          <a href="#">Computational analysis of human language functions: bridging grammaticality judgments and categorical grammar</a>
+          <a href="https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-24K16077/">Computational analysis of human language functions: bridging grammaticality judgments and categorical grammar</a>
           Grant-in-Aid for <x-abbr>Japan Society for the Promotion of
           Science</x-abbr> (3,700,000 JPY in total), <x-abbr>Japan Society for the Promotion of
             Science</x-abbr>, April. 2024 — March. 2029
