@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <?php 
-    $title = "Masaya Taniguchi";
+  <?php
+    $GLOBALS['title'] = "Masaya Taniguchi";
     include 'head.php';
   ?>
 </head>
