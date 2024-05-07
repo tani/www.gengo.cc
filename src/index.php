@@ -18,7 +18,7 @@
   </header>
   <main m="x-auto y-2" flex size="fit">
     <div  w="64" sm:block hidden relative>
-      <img w="48" block m="x-auto" src="./static/portfolio_square_watercolor.jpg" />
+      <img loading="lazy" w="48" block m="x-auto" src="./static/portfolio_square_watercolor.webp" />
       <aside sticky top="0"></aside>
     </div>
     <article text="sm:justify" p="x-2" prose="~ stone">
