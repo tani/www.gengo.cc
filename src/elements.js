@@ -1,33 +1,24 @@
-customElements.define("x-math", class extends HTMLElement {
-    async connectedCallback() {
-        const { TeX } = await import("mathjax-full/js/input/tex.js");
-        const { SVG } = await import("mathjax-full/js/output/svg.js");
-        const { browserAdaptor } = await import("mathjax-full/js/adaptors/browserAdaptor.js");
-        const { RegisterHTMLHandler } = await import("mathjax-full/js/handlers/html.js");
-        const { AssistiveMmlHandler } = await import("mathjax-full/js/a11y/assistive-mml.js");
-        const { AllPackages } = await import("mathjax-full/js/input/tex/AllPackages.js");
-        const { mathjax } = await import("mathjax-full/js/mathjax.js");
-        const tex = new TeX({ packages: AllPackages });
-        const svg = new SVG({ fontCache: "local" });
-        const adaptor = browserAdaptor();
-        const handler = RegisterHTMLHandler(adaptor);
-        AssistiveMmlHandler(handler);
-        const html = mathjax.document(document, { InputJax: tex, OutputJax: svg });
-        const CSS = `
-            svg a { fill: blue; stroke: blue; }
-            [data-mml-node="merror"] > g { fill: red; stroke: red; }
-            [data-mml-node="merror"] > rect[data-background] { fill: yellow; stroke: none; }
-            [data-frame], [data-line] { stroke-width: 70px; fill: none; }
-            .mjx-dashed { stroke-dasharray: 140; }
-            .mjx-dotted { stroke-linecap: round; stroke-dasharray: 0, 140; }
-            use[data-c] { stroke-width: 3px; }
-        `;
-        const shadow = this.attachShadow({ mode: "closed" });
-        shadow.appendChild(html.convert(this.innerHTML, { display: this.attributes.display }));
-        shadow.appendChild(svg.styleSheet(html));
-        shadow.innerHTML += `<style>${CSS}</style>`;
-    }
-});
+ customElements.define("x-math", class extends HTMLElement {
+     async connectedCallback() {
+         const { TeX } = await import("mathjax-full/mjs/input/tex.js");
+         const { CHTML } = await import("mathjax-full/mjs/output/chtml.js");
+         const { browserAdaptor } = await import("mathjax-full/mjs/adaptors/browserAdaptor.js");
+         const { RegisterHTMLHandler } = await import("mathjax-full/mjs/handlers/html.js");
+         const { AssistiveMmlHandler } = await import("mathjax-full/mjs/a11y/assistive-mml.js");
+         const { AllPackages } = await import("mathjax-full/mjs/input/tex/AllPackages.js");
+         const { mathjax } = await import("mathjax-full/mjs/mathjax.js");
+         const tex = new TeX({ packages: AllPackages });
+         const chtml = new CHTML()
+         const adaptor = browserAdaptor();
+         const handler = RegisterHTMLHandler(adaptor);
+         AssistiveMmlHandler(handler);
+         const html = mathjax.document(document, { InputJax: tex, OutputJax: chtml });
+         const shadow = this.attachShadow({ mode: "closed" });
+         console.log(this.attributes.display)
+         shadow.appendChild(html.convert(this.innerHTML, { display: this.attributes.display ?? false }));
+         shadow.appendChild(chtml.styleSheet(html));
+     }
+ });
 customElements.define("x-abbr", class extends HTMLElement {
     connectedCallback() {
         // check if the device is a mobile

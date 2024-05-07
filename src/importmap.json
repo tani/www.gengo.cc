@@ -1,10 +1,11 @@
 {
     "imports": {
         "@unocss/runtime/": "https://cdn.jsdelivr.net/npm/@unocss/runtime@0.58.5/",
-        "mathjax-full/": "https://ga.jspm.io/npm:mathjax-full@3.2.2/",
-        "mhchemparser/": "https://ga.jspm.io/npm:mhchemparser@4.2.1/",
-        "shiki": "https://ga.jspm.io/npm:shiki@1.1.13/dist/index.mjs",
-        "slugify": "https://ga.jspm.io/npm:slugify@1.6.6/slugify.js",
-        "tocbot": "https://ga.jspm.io/npm:tocbot@4.25.0/src/js/index.js"
+        "mathjax-full/": "https://cdn.jsdelivr.net/npm/mathjax-full@4.0.0-beta.6/",
+	"#default-font/": "https://cdn.jsdelivr.net/npm/mathjax-modern-font@4.0.0-beta.6/mjs/",
+	"#mhchem/": "https://cdn.jsdelivr.net/npm/mhchemparser@4.2.1/esm/",
+	"shiki": "https://cdn.jsdelivr.net/npm/shiki@1.4.0/+esm",
+        "slugify": "https://cdn.jsdelivr.net/npm/slugify@1.6.6/+esm",
+        "tocbot": "https://cdn.jsdelivr.net/npm/tocbot@4.25.0/+esm"
     }
 }
