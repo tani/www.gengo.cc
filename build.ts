@@ -40,4 +40,4 @@ async function copy(infile: string) {
 }
 
 await generate('src/index.php');
-await copy('src/static/portfolio_square_watercolor.jpg');
+await copy('src/static/portfolio_square_watercolor.webp');
