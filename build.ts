@@ -1,18 +1,19 @@
-import { PhpNode } from "php-wasm/PhpNode.mjs";
-import { parse as toml_decode } from "@std/toml";
+import { PhpNode } from "php-wasm/PhpNode.mjs"; import { parse as toml_decode } from "@std/toml";
 import { FileTask, run } from "@tani/shake";
-import { $, fs, path } from "zx";
+import * as fs from "fs/promises"
+import * as path from "path"
+import { $ } from "zx";
 
 async function render(filename: string) {
   let body = "";
   const write = ({detail}: {detail: string}) => { body += detail;};
-  const php = new PhpNode({ toml_decode, fs, path });
+  const php = new PhpNode({ toml_decode, fs });
   php.addEventListener("output", write);
   php.addEventListener("error", write);
   await php.run(`
     <?php
     function phpwasm_file_get_contents($file) {
-      return vrzno_await(vrzno_env("io")->readFile($file, 'utf8'));
+      return vrzno_await(vrzno_env("fs")->readFile($file, 'utf8'));
     }
     function phpwasm_include($file) {
       $root = dirname($file);
