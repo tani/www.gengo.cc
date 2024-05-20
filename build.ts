@@ -1,12 +1,15 @@
-import { PhpNode } from "php-wasm/PhpNode.mjs"; import { parse as toml_decode } from "@std/toml";
+import { PhpNode } from "php-wasm/PhpNode.mjs";
+import { parse as toml_decode } from "@std/toml";
 import { FileTask, run } from "@tani/shake";
-import * as fs from "fs/promises"
-import * as path from "path"
+import * as fs from "fs/promises";
+import * as path from "path";
 import { $ } from "zx";
 
 async function render(filename: string) {
   let body = "";
-  const write = ({detail}: {detail: string}) => { body += detail;};
+  const write = ({ detail }: { detail: string }) => {
+    body += detail;
+  };
   const php = new PhpNode({ toml_decode, fs });
   php.addEventListener("output", write);
   php.addEventListener("error", write);
@@ -27,21 +30,31 @@ async function render(filename: string) {
   return body;
 }
 
-const php = new FileTask('dist/index.html', [new FileTask('src/index.php')], async () => {
-  const infile = 'src/index.php';
-  const outfile = `dist/index.html`;
-  await $`mkdir -p ${path.dirname(outfile)}`;
-  await fs.writeFile(outfile, await render(infile));
-})
+const php = new FileTask(
+  "dist/index.html",
+  [new FileTask("src/index.php")],
+  async () => {
+    const infile = "src/index.php";
+    const outfile = `dist/index.html`;
+    await $`mkdir -p ${path.dirname(outfile)}`;
+    await fs.writeFile(outfile, await render(infile));
+  },
+);
 
-const webp = new FileTask('dist/static/portfolio_square_watercolor.webp', [new FileTask('src/static/portfolio_square_watercolor.webp')], async () => {
-  await $`mkdir -p dist/static`
-  await $`cp src/static/portfolio_square_watercolor.webp dist/static/`
+const webp = new FileTask("dist/static/portfolio_square_watercolor.webp", [
+  new FileTask("src/static/portfolio_square_watercolor.webp"),
+], async () => {
+  await $`mkdir -p dist/static`;
+  await $`cp src/static/portfolio_square_watercolor.webp dist/static/`;
 });
 
-const css = new FileTask('dist/static/uno.css', [new FileTask('src/index.php')], async () => {
-  await $`mkdir -p dist/static`
-  await $`unocss src/*.php -o dist/static/uno.css`
-})
+const css = new FileTask(
+  "dist/static/uno.css",
+  [new FileTask("src/index.php")],
+  async () => {
+    await $`mkdir -p dist/static`;
+    await $`unocss src/*.php -o dist/static/uno.css`;
+  },
+);
 
 run(php, webp, css);

@@ -1,9 +1,14 @@
-import { defineConfig, presetUno, presetAttributify, presetTypography } from 'unocss';
+import {
+  defineConfig,
+  presetAttributify,
+  presetTypography,
+  presetUno,
+} from "unocss";
 
 export default defineConfig({
   presets: [
     presetUno(),
     presetAttributify(),
-    presetTypography()
-  ]
-})
+    presetTypography(),
+  ],
+});
