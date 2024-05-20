@@ -2,7 +2,7 @@
   "imports": {
     "@unocss/runtime/": "https://cdn.jsdelivr.net/npm/@unocss/runtime@0.58.5/",
     "mathjax-full/": "https://cdn.jsdelivr.net/npm/mathjax-full@4.0.0-beta.6/",
-    "#default-font/": "https://cdn.jsdelivr.net/npm/mathjax-fira-font@4.0.0-beta.6/mjs/",
+    "#default-font/": "https://cdn.jsdelivr.net/npm/mathjax-stix2-font@4.0.0-beta.6/mjs/",
     "#mhchem/": "https://cdn.jsdelivr.net/npm/mhchemparser@4.2.1/esm/",
     "shiki": "https://cdn.jsdelivr.net/npm/shiki@1.4.0/+esm",
     "slugify": "https://cdn.jsdelivr.net/npm/slugify@1.6.6/+esm",

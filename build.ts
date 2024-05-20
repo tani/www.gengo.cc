@@ -41,11 +41,11 @@ const php = new FileTask(
   },
 );
 
-const webp = new FileTask("dist/static/portfolio_square_watercolor.webp", [
-  new FileTask("src/static/portfolio_square_watercolor.webp"),
+const webp = new FileTask("dist/static/portfolio.avif", [
+  new FileTask("src/static/portfolio.avif"),
 ], async () => {
   await $`mkdir -p dist/static`;
-  await $`cp src/static/portfolio_square_watercolor.webp dist/static/`;
+  await $`cp src/static/portfolio.avif dist/static/`;
 });
 
 const css = new FileTask(

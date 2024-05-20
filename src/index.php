@@ -6,7 +6,7 @@
     include 'head.php';
   ?>
 </head>
-<body p="sm:x-0 x-5" m="0" font="sans" box-border un-cloak>
+<body bg="paper" font="serif" p="sm:x-0 x-5" m="0" font="sans" box-border un-cloak>
   <header m="x-auto" md:w="[calc(16rem+65ch)]">
     <h1 font="sans" bg="dark-900" text="white" inline-block p="x-2" m="y-0">GENGO.CC</h1><br>
     <div p="x-2">
@@ -18,7 +18,7 @@
   </header>
   <main m="x-auto y-2" flex size="fit">
     <div  w="64" sm:block hidden relative>
-      <img loading="lazy" w="48" block m="x-auto" src="./static/portfolio_square_watercolor.webp" />
+      <img loading="lazy" w="48" block m="x-auto" src="./static/portfolio.avif" />
       <aside sticky top="0"></aside>
     </div>
     <article text="sm:justify" p="x-2" prose="~ stone">
@@ -78,11 +78,11 @@
           <?php } ?>
           <?php if (isset($pub['abstract'])) { ?>
             <span>
-              <label class="abst-btn" inline-block bg="emerald-200" cursor="pointer" rounded="full" p="x-2 y-1" text="xs" font="bold" m="l-3">
+              <label class="abst-btn" inline-block bg="stone-400" cursor="pointer" rounded="full" p="x-2 y-1" text="xs" font="bold" m="l-3">
                 <input type="checkbox" hidden>
                 abstract is available
               </label>
-              <div bg="gray-100" rounded="md" p="x-2 y-1" m="t-2">
+              <div bg="stone-100" rounded="md" p="x-2 y-1" m="t-2">
                 <?= $pub['abstract'] ?>
               </div>
             </span>
