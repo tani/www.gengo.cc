@@ -12,7 +12,7 @@ export default defineConfig({
     presetAttributify(),
     presetTypography(),
     presetWebFonts({
-      provider: 'none',
+      provider: 'bunny',
       fonts: {
         serif: [{
           name: 'Merriweather',
