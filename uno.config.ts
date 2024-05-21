@@ -12,11 +12,26 @@ export default defineConfig({
     presetAttributify(),
     presetTypography(),
     presetWebFonts({
-      provider: 'google',
+      provider: 'bunny',
       fonts: {
-        serif: ['Merriweather:400,700', 'Zen Old Mincho:400,700'],
-        sans: ['Merriweather Sans:400,700', 'Zen Kaku Gothic New:400,700'],
-        mono: ['M PLUS 1 Code:400,700'],
+        serif: [{
+          name: 'Merriweather',
+          weights: ['400','700'],
+        }, {
+          name: 'Zen Old Mincho',
+          weights: ['400','700'],
+        }],
+        sans: [{
+          name: 'Merriweather Sans',
+          weights: ['400','700'],
+        }, {
+          name: 'Zen Kaku Gothic New',
+          weights: ['400','700'],
+        }],
+        mono: [{
+          name: 'M PLUS 1 Code',
+          weights: ['400','700'],
+        }],
        },
     }),
   ]
