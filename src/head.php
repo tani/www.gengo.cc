@@ -9,8 +9,6 @@
 <script type="importmap"><?php include 'importmap.json' ?></script>
 <script type="module"><?php include 'elements.js' ?></script>
 <script type="module"><?php include 'tocbot.js' ?></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>
   .abst-btn:has(:not(:checked)) + div {
     display: none;

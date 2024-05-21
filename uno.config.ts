@@ -12,12 +12,12 @@ export default defineConfig({
     presetAttributify(),
     presetTypography(),
     presetWebFonts({
-      provider: 'bunny',
+      provider: 'google',
       fonts: {
-        serif: ['Merriweather', 'Zen Old Mincho'],
-        sans: ['Merriweather Sans', 'Zen Kaku Gothic New'],
-        mono: ['M PLUS 1 Code']
-      },
+        serif: ['Merriweather:400,700', 'Zen Old Mincho:400,700'],
+        sans: ['Merriweather Sans:400,700', 'Zen Kaku Gothic New:400,700'],
+        mono: ['M PLUS 1 Code:400,700'],
+       },
     }),
   ]
 });
