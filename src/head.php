@@ -11,16 +11,11 @@
 <script type="module"><?php include 'tocbot.js' ?></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
 <style>
   .abst-btn:has(:not(:checked)) + div {
     display: none;
   }
   body {
     background-color: rgb(248, 246, 232);
-    font-family: 'Merriweather', 'Zen Old Mincho', 'serif';
-  }
-  code {
-    font-family: 'M PLUS 1 Code', 'monospace';
   }
 </style>
