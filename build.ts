@@ -30,9 +30,15 @@ async function render(filename: string) {
   return body;
 }
 
+const deps = [];
+for await (const file of fs.glob("src/*.php")) {
+  const task = new FileTask(file);
+  deps.push(task);
+}
+
 const php = new FileTask(
   "dist/index.html",
-  [new FileTask("src/index.php")],
+  deps,
   async () => {
     const infile = "src/index.php";
     const outfile = `dist/index.html`;

@@ -1,3 +1,4 @@
+<head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="author" content="Masaya Taniguchi" />
@@ -17,3 +18,4 @@
     background-color: rgb(248, 246, 232);
   }
 </style>
+<head>

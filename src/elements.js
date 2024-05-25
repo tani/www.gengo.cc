@@ -9,7 +9,7 @@ customElements.define(
         { RegisterHTMLHandler },
         { AssistiveMmlHandler },
         { AllPackages },
-        { mathjax }
+        { mathjax },
       ] = await Promise.all([
         import("mathjax-full/mjs/input/tex.js"),
         import("mathjax-full/mjs/output/chtml.js"),
@@ -17,7 +17,7 @@ customElements.define(
         import("mathjax-full/mjs/handlers/html.js"),
         import("mathjax-full/mjs/a11y/assistive-mml.js"),
         import("mathjax-full/mjs/input/tex/AllPackages.js"),
-        import("mathjax-full/mjs/mathjax.js")
+        import("mathjax-full/mjs/mathjax.js"),
       ]);
       const tex = new TeX({ packages: AllPackages });
       const chtml = new CHTML();
@@ -64,6 +64,19 @@ customElements.define(
         theme: this.getAttribute("theme") ?? "vitesse-light",
         lang: this.getAttribute("lang") ?? "text",
       });
+    }
+  },
+);
+customElements.define(
+  "x-graph",
+  class extends HTMLElement {
+    async connectedCallback() {
+      const { default: mermaid } = await import("mermaid");
+      mermaid.initialize({ startOnLoad: false });
+      const code = this.innerHTML.replace("&gt;", ">").replace("&lt;", "<");
+      const { svg } = await mermaid.render("graphDiv", code);
+      const shadow = this.attachShadow({ mode: "closed" });
+      shadow.innerHTML = svg;
     }
   },
 );
