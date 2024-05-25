@@ -1,5 +1,15 @@
-
-      <h2>Publications and Talks</h2>
+<!doctype html>
+<html lang="en">
+<?php
+  $GLOBALS['title'] = "Masaya Taniguchi";
+  include 'head.php';
+?>
+<body font="serif" p="sm:x-0 x-5" m="0" box-border>
+  <?php include 'header.php'; ?>
+  <main m="x-auto y-2" flex size="fit">
+    <?php include 'sidebar.php'; ?>
+    <article text="sm:justify" p="x-2" prose="~ stone">
+      <h1>Publications and Talks</h1>
       <ol reversed>
         <?php
           $toml_decode = vrzno_env('toml_decode');
@@ -47,3 +57,8 @@
         </li>
         <?php } ?>
       </ol>
+    </article>
+  </main>
+</body>
+</html>
+

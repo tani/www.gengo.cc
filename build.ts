@@ -3,6 +3,7 @@ import { parse as toml_decode } from "@std/toml";
 import { FileTask, run } from "@tani/shake";
 import * as fs from "fs/promises";
 import * as path from "path";
+import { globSync } from "glob";
 import { $ } from "zx";
 
 async function render(filename: string) {
@@ -30,18 +31,23 @@ async function render(filename: string) {
   return body;
 }
 
-const deps = [];
-for await (const file of fs.glob("src/*.php")) {
-  const task = new FileTask(file);
-  deps.push(task);
-}
-
-const php = new FileTask(
+const index_php = new FileTask(
   "dist/index.html",
-  deps,
+  globSync("src/*").map((file: string) => new FileTask(file)),
   async () => {
     const infile = "src/index.php";
     const outfile = `dist/index.html`;
+    await $`mkdir -p ${path.dirname(outfile)}`;
+    await fs.writeFile(outfile, await render(infile));
+  },
+);
+
+const publications_php = new FileTask(
+  "dist/publications.html",
+  globSync("src/*").map((file: string) => new FileTask(file)),
+  async () => {
+    const infile = "src/publications.php";
+    const outfile = `dist/publications.html`;
     await $`mkdir -p ${path.dirname(outfile)}`;
     await fs.writeFile(outfile, await render(infile));
   },
@@ -63,4 +69,4 @@ const css = new FileTask(
   },
 );
 
-run(php, webp, css);
+run(index_php, publications_php, webp, css);

@@ -10,6 +10,7 @@
     "@tani/shake": "npm:@jsr/tani__shake@^0.3.2",
     "@types/node": "^20.12.8",
     "@unocss/cli": "^0.59.4",
+    "glob": "^10.4.1",
     "php-wasm": "^0.0.8",
     "serve": "^14.2.3",
     "tsx": "^4.9.1",
