@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <?php
-  $GLOBALS['title'] = "Masaya Taniguchi";
+  $GLOBALS['title'] = "Links - Masaya Taniguchi";
   include 'head.php';
 ?>
 <body font="serif" p="sm:x-0 x-5" m="0" box-border>
@@ -14,7 +14,7 @@
             <li>
                 <a href="https://sites.google.com/view/yudaisuzuki-logic/home?authuser=3">Yudai Suzuki</a> --
                 He is an up-and-coming researcher studying reverse mathematics in Japan. 
-                We watched anime together at Tohoku University, and he taught me the joy of cycling and the deliciousness of ramen after exercise.
+                We watched a lot of anime together at Tohoku University, and he taught me the joy of cycling and the deliciousness of ramen after exercise.
             </li>
         </ul>
     </article>
