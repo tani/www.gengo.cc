@@ -4,7 +4,7 @@
     <a href="index.html">HOME</a> /
     <a href="https://github.com/tani">CODE</a> /
     <a href="https://www.nlp.ecei.tohoku.ac.jp/">LAB</a> /
-    <a href="publications.html">PUBLICATIONS</a>
+    <a href="publications.html">PUBLICATIONS</a> /
     <a href="links.html">LINKS</a>
   </div>
   <hr border="gray-200">
