@@ -53,6 +53,16 @@ const publications_php = new FileTask(
   },
 );
 
+const links_php = new FileTask(
+  "dist/links.html",
+  globSync("src/*").map((file: string) => new FileTask(file)),
+  async () => {
+    const infile = "src/links.php";
+    const outfile = `dist/links.html`;
+    await $`mkdir -p ${path.dirname(outfile)}`;
+    await fs.writeFile(outfile, await render(infile));
+  },
+);
 const webp = new FileTask("dist/static/portfolio.avif", [
   new FileTask("src/static/portfolio.avif"),
 ], async () => {
@@ -69,4 +79,4 @@ const css = new FileTask(
   },
 );
 
-run(index_php, publications_php, webp, css);
+run(index_php, publications_php, links_php, webp, css);
