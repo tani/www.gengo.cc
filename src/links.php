@@ -1,4 +1,3 @@
-https://sites.google.com/view/yudaisuzuki-logic/home?authuser=3
 <!doctype html>
 <html lang="en">
 <?php
