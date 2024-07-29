@@ -1,4 +1,13 @@
 [[publications]]
+type = "International Conference"
+title = "Substructural Logics weaker than Commutative Lambek Calculus"
+authors = [ "Masaya Taniguchi" ]
+conference = "Topology, Algebra, and Categories in Logic"
+year = 2024
+month = 7
+venue = "Balcerona, Spain"
+
+[[publications]]
 type = "Domestic Conference"
 title = "Mathematical Logic Approach for Incremental Parsing"
 authors = [ "Masaya Taniguchi" ]
