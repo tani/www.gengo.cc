@@ -1,3 +1,14 @@
+# Kosuke Matsuzaki, Masaya Taniguchi, Kentaro Inui, Keisuke Sakaguchi. J-UniMorph: Japanese Morphological Annotation through the Universal Feature Schema. 21st SIGMORPHON Workshop on Computational Research in Phonetics, Phonology, and Morphology, pp. 7–19, June 2024. 
+
+[[publications]]
+type = "International Conference"
+title = "J-UniMorph: Japanese Morphological Annotation through the Universal Feature Schema"
+authors = ["Kosuke Matsuzaki", "Masaya Taniguchi", "Kentaro Inui", "Keisuke Sakaguchi"]
+conference = "21st SIGMORPHON Workshop on Computational Research in Phonetics, Phonology, and Morphology"
+year = 2024
+month = 6
+venue = "Mexico City, Maxico"
+
 [[publications]]
 type = "International Conference"
 title = "Substructural Logics weaker than Commutative Lambek Calculus"
